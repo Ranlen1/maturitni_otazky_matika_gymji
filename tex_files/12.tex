@@ -1,0 +1,83 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+
+% matematicke package
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{campat=1.18}
+
+\title{Maturitní otázka číslo 12: Posloupnosti a řady}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+\subsection*{Co to je posloupnost?}
+Posloupnost je typem funkce, jejímž definičním oborem $D$ je buď množina $\mathbb{N}$ všech
+přirozených čísel nebo jejím počátečním úsekem $\{1, 2, \dots, n\}$. Konečná posloupnost je
+posloupnost s konečným definičním oborem, nekonečná posloupnost ho má nekonečný.
+
+Konečná posloupnost s n-tým členem $a_n$ a s definičním oborem $\{1, 2, \dots, k\}$ se zapisuje
+$\{a_1, a_2, \dots, a_k\}$ nebo $(a_n)_{n=1}^k$. Nekonečná posloupnost s n-tým členem $a_n$
+se zapisuje $\{a_1, a_2, \dots, a_k, \dots\}$ nebo $(a_n)_{n=1}^\inf$.
+
+\subsection*{Jak se zadávají posloupnosti?}
+\subsubsection*{Výčet hodnot}
+Tato metoda je vhodná pro konečné posloupnosti nebo pro ty, kde jde z prvních členů určit závislost,
+ze které jde určit členy následující.
+
+$(a_n)_{n=1}^6 = \{4, -3, 20, 22, -15, 42\}$, $(b_n)_{n=1}^\inf$ $= \{2, 4, 6, 8, \dots\}$
+
+\begin{tabular}{|c|c|c|c|c|}
+\hline
+$n$   & 1 & 2 & 3  & 4 \\ \hline
+$c_n$ & 3 & 9 & 27 & 81 \\ \hline
+\end{tabular}
+\subsubsection*{Graf}
+Metoda grafem se využívá ve stejných případech jako metoda výčtem. Jeho výhoda oproti výčtu je jeho
+názornost a lehčeji se z něj určuje závislost posloupnosti. Pro posloupnost
+$(a_n)_{n=1}^7 = \{0, 1, 1, 2, 3, 5, 8\}$ by vypadal graf následovně:
+\begin{center}
+\begin{tikzpicture}
+\begin{axis}[
+    width=12cm,
+    height=7cm,
+    axis line = middle,
+    xlabel = {$n$},
+    ylabel = {$a_n$},
+    ylabel style={
+        at={(ticklabel* cs:0.5)},
+        anchor=south,
+        rotate=-90
+    },
+    xmin = 0, xmax = 8,
+    ymin = 0, ymax = 10,
+    xtick={0, 1, 2, 3, 4, 5, 6, 7, 8},
+    ytick={0, 2, 4, 6, 8},
+    grid=none,
+    style={thick}
+    ]
+\addplot[
+only marks,
+mark=diamond*,
+mark options={fill=red, draw=blue},
+]
+coordinates{
+    (1,0) (2,1) (3,1) (4,2) (5, 3) (6, 5) (7, 8)
+};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\subsubsection*{Vzorec pro n-tý člen}
+\subsubsection*{Rekurentní vzorec}
+\end{document}
+
