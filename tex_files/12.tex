@@ -13,7 +13,7 @@
 \usepackage{geometry}
 \geometry{margin=2.5cm}
 \usepackage{pgfplots}
-\pgfplotsset{campat=1.18}
+\pgfplotsset{compat=1.18}
 
 \title{Maturitní otázka číslo 12: Posloupnosti a řady}
 \author{}
@@ -29,6 +29,8 @@ posloupnost s konečným definičním oborem, nekonečná posloupnost ho má nek
 Konečná posloupnost s n-tým členem $a_n$ a s definičním oborem $\{1, 2, \dots, k\}$ se zapisuje
 $\{a_1, a_2, \dots, a_k\}$ nebo $(a_n)_{n=1}^k$. Nekonečná posloupnost s n-tým členem $a_n$
 se zapisuje $\{a_1, a_2, \dots, a_k, \dots\}$ nebo $(a_n)_{n=1}^\inf$.
+
+Ve zbytku této otázky budu, pokud to neřeknu jinak, pracovat s neomezenými posloupnostmi.
 
 \subsection*{Jak se zadávají posloupnosti?}
 \subsubsection*{Výčet hodnot}
@@ -85,5 +87,117 @@ nám dá posloupnost $\{3, 5, 7, \dots\}$.
 Rekurentní vzorec určuje člen posloupnosti pomocí jednoho nebo více předcházejících členů. Součástí
 každého rekurentního vzorce musí být také alespoň jeden člen posloupnosti, většinou je to to ten
 první. Vzorec $a_n = a_{n-1} + 3, a_1 = 0$ nám dá posloupnost $\{0, 3, 6, \dots\}$.
+\subsection*{Vlastnosti posloupností}
+\subsubsection*{Monotónnost}
+U posloupností rozlišujeme čtyři typy monotónie a to posloupnost rostoucí, klesající, nerostoucí a
+neklesající. Posloupnosti s alespoň jedním typem monotonie nazýváme monotónními posloupnostmi.
+Posloupnosti rostoucí a klesající nazýváme ryze monotónními posloupnostmi.
+
+Posloupnost se nazývá rostoucí právě tehdy, když: $\forall n,m \in D : n < m \Rightarrow a_n < a_m$
+
+Příklady: $a_n = n^2 + 1$, $a_n = a_{n-1} + 4, a_1 = 3$
+
+Posloupnost se nazývá klesající právě tehdy, když: $\forall n,m \in D : n < m \Rightarrow a_n > a_m$
+
+Příklady: $a_n = \frac{1}{n^2} -1$, $a_n = a_{n-1} - 5, a_1 = 0$
+
+Posloupnost se nazývá nerostoucí právě tehdy, když: $\forall n,m \in D : n < m \Rightarrow a_n \ge
+a_m$
+
+Příklady: $a_n = -(n)^2$, $a_n = a_{n-1}, a_1 = 8$
+
+Posloupnost se nazývá neklesající právě tehdy, když: $\forall n,m \in D : n < m \Rightarrow a_n \le
+a_m$
+
+Příklady: $a_n = n+6$, $a_n = a_{n-1} + a_{n-2}, a_1 = 1$
+\subsubsection*{Omezenost}
+U posloupností rozlišujeme tři typy omezenosti a to omezenost shora, omezenost zdola a omezenost
+neboli omezenost zdola i shora.
+
+Posloupnost je omezená shora právě tehdy, když: $\exists h \in \mathbb{R} \quad \forall n \in D :
+a_n \le h$
+
+Příklady: $a_n = -(2)^n$, $a_n = a_{n-1} - 10, a_1 = 10$
+
+Posloupnost je omezená zdola právě tehdy, když: $\exists d \in \mathbb{R} \quad \forall n \in D :
+a_n \ge d$
+
+Příklady: $a_n = n^2 + 6$, $a_n = a_{n-1} + 5, a_1 = -9$
+
+Posloupnost je omezená právě tehdy, když: $\exists h \in \mathbb{R} \quad \exists d \in \matbb{R}
+\quad \forall n \in D : d \le a_n \le h$
+
+Příklady: $a_n = \sin(n)$, $a_n = a_{n-1} \cdot (-1), a_1 = 1$
+\subsection*{Artitmetická posloupnost}
+Posloupnost se nazývá aritmetická právě tehdy, když: $\exists d \in \mathbb{R} \quad \all n \in D
+: a_n = a_{n-1} + d$
+
+Číslo $d$ se nazývá diference aritmetické poslouposti.
+\subsubsection*{Vlastnosti a vzthay pro aritmetické posloupnosti}
+Monotónnost: $\text{rostoucí} \leftrightarrow d > 0$, $\text{klesající} \leftrightarrow d < 0$
+
+Omezenost: $\text{shora omezená} \leftrightarrow d < 0$, $\text{zdola omezená} \leftrightarrow d > 0$,
+$\text{omezená} \leftrightarrow d = 0$
+
+Každý člen aritmetické posloupnosti s vyjímkou prvního je aritmetickým průměrem svých sousedů.
+
+$\all n \in \matbb{N} - \{1\} : a_n = \frac{a_{n-1} + a_{n+1}}{2}$
+
+Důkaz z definice:
+\[
+\begin{align*}
+    a_n &= a_{n-1} + d \\
+    a_n &= a_{n+1} - d \\ \hline \\
+    2a_n &= a_{n-1} + a_{n+1} + d - d \\
+    2a_n &= a_{n-1} + a_{n+1} \\
+    a_n &= \frac{a_{n-1} + a_{n+1}}{2} \quad \square
+\end{align*}
+\]
+
+Pro aritmetickou posloupnost s prvním členem $a_1$ a diferencí $d$ platí:
+
+$a_n = a_1 + (n-1)d$
+
+Důkaz matematickou indukcí:
+\[
+\begin{align*}
+    1. \quad n &= 1 \\
+    a_1 &= a_1 + (1-1)d \\
+    a_1 &= a_1 \\\\
+    2. \quad n &= k \\
+    a_k &= a_1 + (k-1)d \\
+    a_{k+1} &= a_1 + (k+1-1)d \\
+    a_{k+1} &= a_1 + kd \\\\
+    \text{z definice: } a_{k+1} &= a_k + d \\
+    \text{induk. před: } a_{k+1} &= a_1 + (k-1)d + d \\
+    a_{k+1} &= a_1 + kd \quad \square
+\end{align*}
+\]
+
+Pro součet $s_n$ prvních $n$ členů aritmetické posloupnosti s prvním členem $a_1$ a diferencí $d$
+platí:
+
+$s_n = \frac{n}{2}(a_1 + a_n)$
+
+Přímý důkaz:
+\[
+\begin{align*}
+    &s_n = a_1 + a_2 + \dots + a_n \\
+    &\text{tento součet lze přepsat dvěma způsoby} \\
+    &s_n = a_1 + (a_1 + d) + (a_1 + 2d) + \dots + (a_1 + (n-1)d) \\
+    &s_n = (a_1 + (n-1)d) + (a_1 + (n-2)d) + (a_1 + (n-2)d) + \dots + (a_1 + d) + a_1 \\
+    &\text{oba tyto řádky sečteme} \\
+    &2s_n = (2a_1 + (n-1)d) + (2a_1 + (n-1)d) + \dots + (2a_1 + (n-1)d) \\
+    &2s_n = n(a_1 + a_1 + (n-1)d) \\
+    &2s_n = n(a_1 + a_n) \\
+    &s_n = \frac{n}{2}(a_1 + a_n) \quad \square
+\end{align*}
+\]
+\subsection*{Geometrická posloupnost}
+Posloupnost se nazývá geometrická právě tehdy, když: $\exists q \in \mathbb{R} \quad \all n \in
+\mathbb{N} : a_n = a_{n-1} \cdot q$
+
+Číslo $q$ se nazývá kvocient geometrické posloupnosti.
+\subsubsection*{Vlastnosti a vztahy pro geometrickou posloupnost}
 \end{document}
 
