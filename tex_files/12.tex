@@ -109,6 +109,9 @@ Příklady: $a_n = -(n)^2$, $a_n = a_{n-1}, a_1 = 8$
 Posloupnost se nazývá neklesající právě tehdy, když: $\forall n,m \in D : n < m \Rightarrow a_n \le
 a_m$
 
+Při dokazování omezenosti se porovnávají sousední členy. Pokud je napriklad $a_n > a_{n+1}$, platí to
+tak to pro všechny členy posloupnosti a posloupnost je tím pádem klesající.
+
 Příklady: $a_n = n+6$, $a_n = a_{n-1} + a_{n-2}, a_1 = 1$
 \subsubsection*{Omezenost}
 U posloupností rozlišujeme tři typy omezenosti a to omezenost shora, omezenost zdola a omezenost
@@ -128,20 +131,35 @@ Posloupnost je omezená právě tehdy, když: $\exists h \in \mathbb{R} \quad \e
 \quad \forall n \in D : d \le a_n \le h$
 
 Příklady: $a_n = \sin(n)$, $a_n = a_{n-1} \cdot (-1), a_1 = 1$
+
+Omezenost posloupnosti budeš pravděpodobně dokazovat u klesajicí nebo rostoucí posloupnosti. Tím pádem
+víš, že $a_1$ bude buď globální maximum nebo minimum a tím zjistíš její omezenost. Další metoda je
+odhadem. Řekněme že máme posloupnost $a_n = \frac{(-1)^n}{n}$. Poté co dáme její předpis do
+absolutní hodnoty získáme $\frac{1}{n}$. Tím zjišťujeme: $|a_n| < 1$. Díky tomu víme, že omezenost
+zhora je číslem 1 a omezenost zdola je číslem -1.
 \subsection*{Artitmetická posloupnost}
 Posloupnost se nazývá aritmetická právě tehdy, když: $\exists d \in \mathbb{R} \quad \all n \in D
 : a_n = a_{n-1} + d$
 
 Číslo $d$ se nazývá diference aritmetické poslouposti.
 \subsubsection*{Vlastnosti a vzthay pro aritmetické posloupnosti}
-Monotónnost: $\text{rostoucí} \leftrightarrow d > 0$, $\text{klesající} \leftrightarrow d < 0$
+Monotónnost:
 
-Omezenost: $\text{shora omezená} \leftrightarrow d < 0$, $\text{zdola omezená} \leftrightarrow d > 0$,
+$\text{rostoucí} \leftrightarrow d > 0$
+
+$\text{klesající} \leftrightarrow d < 0$
+
+Omezenost:
+
+$\text{shora omezená} \leftrightarrow d < 0$
+
+$\text{zdola omezená} \leftrightarrow d > 0$
+
 $\text{omezená} \leftrightarrow d = 0$
 
 Každý člen aritmetické posloupnosti s vyjímkou prvního je aritmetickým průměrem svých sousedů.
 
-$\all n \in \matbb{N} - \{1\} : a_n = \frac{a_{n-1} + a_{n+1}}{2}$
+$\forall n \in \mathbb{N} - \{1\} : a_n = \frac{a_{n-1} + a_{n+1}}{2}$
 
 Důkaz z definice:
 \[
@@ -194,10 +212,85 @@ Přímý důkaz:
 \end{align*}
 \]
 \subsection*{Geometrická posloupnost}
-Posloupnost se nazývá geometrická právě tehdy, když: $\exists q \in \mathbb{R} \quad \all n \in
+Posloupnost se nazývá geometrická právě tehdy, když: $\exists q \in \mathbb{R} \quad \forall n \in
 \mathbb{N} : a_n = a_{n-1} \cdot q$
 
 Číslo $q$ se nazývá kvocient geometrické posloupnosti.
 \subsubsection*{Vlastnosti a vztahy pro geometrickou posloupnost}
+Monotónnost:
+
+$\text{rostoucí} \leftrightarrow a_1 > 0, q > 1 \text{ nebo } a_1 < 0, 0 < q < 1$,
+
+$\text{klesající} \leftrightarrow a_1 > 0, 0 < 1 < 1 \text{ nebo } a_1 < 0, q > 1$
+
+Omezenost:
+
+$\text{shora omezená} \leftrightarrow a_1 < 0, q > 1$
+
+$\text{zdola omezená} \leftrightarrow a_1 > 0, q > 1$
+
+$\text{omezená} \leftrightarrow |q| < 1 \text{ nebo } |q| = 1 \text{ nebo } a_1 = 0$
+
+Každý člen geometrické posloupnosti s vyjímkou prvního je geometrickým průměrem svých sousedů.
+
+$\forall n \in \mathbb{N} - \{1\} : a_n = \sqrt{a_{n-1} \cdot a_{n+1}}$
+
+Důkaz z definice:
+\[
+\begin{align*}
+    a_n &= a_{n-1} \cdot q \\
+    a_{n+1} &= a_n \cdot q \\ \hline \\
+    a_{n-1} \cdot a_{n+1} &= a_{n-1}(a_n \cdot q) \\
+    a_{n-1} \cdot a_{n+1} &= (a_{n-1} \cdot q)^2 \\
+    a_{n-1} \cdot a_{n+1} &= a_n^2 \quad \square
+\end{align*}
+\]
+
+Pro geometrickou posloupnost s prvním členem $a_1$ a kvocientem $q$ platí:
+
+$a_n = a_1 \cdot q^{n-1}$
+
+Důkaz matematickou indukcí:
+\[
+\begin{align*}
+    1. \quad n &= 1 \\
+    a_1 &= a_1 \cdot q^{1-1} \\
+    a_1 &= a_1 \\\\
+    2. \quad n &= k \\
+    a_k &= a_1 \cdot q^{k-1} \\
+    a_{k+1} &= a_1 \cdot q^{k+1-1} \\
+    a_{k+1} &= a_1 \cdot q^k \\\\
+    \text{z definice: } a_{k+1} &= a_k \cdot q \\
+    \text{induk. před: } a_{k+1} &= a_1 \cdot q^{k-1} \cdot q \\
+    a_{k+1} &= a_1 \cdot q^k \quad \square
+\end{align*}
+\]
+
+Pro součet $s_n$ prvních $n$ členů geometrické posloupnosti s prvním členem $a_1$ a kvocientem $q$
+platí:
+
+$s_n = \begin{cases} 
+    a_1 \cdot n & \text{pro } q = 1 \\
+    a_1 \cdot \frac{q^n - 1}{q - 1} & \text{pro } q \neq 1$ 
+\end{cases}
+
+Přímý důkaz:
+\[
+\begin{align*}
+    &1. \quad q = 1 \\
+    &s_n = a_1 + a_1 + a_1 + \dots + a_1 \\
+    &s_n = n \cdot a_1 \\\\
+    &2. \quad q \neq 1 \\
+    &s_n = a_1 + (a_1 \cdot q) + (a_1 \cdot q^2) + \dots + (a_1 \cdot q^{n-1}) + a_1 \cdot q \\
+    &s_n \cdot q = (a_1 \cdot q) + (a_1 \cdot q^2) + (a_1 \cdot q^3) + \dots + (a_1 \cdot q^{n-1} +
+    &a_1 \cdot q \\
+    &\text{dve předchozí řádky od sebe odečteme} \\
+    &s_n - s_n \cdot q = a_1 - (a_1 \cdot q^n) \\
+    &s_n(1 - q) = a_1(1 - q^n) \\
+    &s_n = a_1 \frac{q^n - 1}{q - 1} \quad \square
+\end{align*}
+\]
+\subsection*{Limita posloupnosti}
+pozn. Každá monotónní a omezená posloupnost je konvergentní. to zmin
 \end{document}
 
