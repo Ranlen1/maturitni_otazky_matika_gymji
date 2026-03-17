@@ -28,7 +28,7 @@ posloupnost s konečným definičním oborem, nekonečná posloupnost ho má nek
 
 Konečná posloupnost s n-tým členem $a_n$ a s definičním oborem $\{1, 2, \dots, k\}$ se zapisuje
 $\{a_1, a_2, \dots, a_k\}$ nebo $(a_n)_{n=1}^k$. Nekonečná posloupnost s n-tým členem $a_n$
-se zapisuje $\{a_1, a_2, \dots, a_k, \dots\}$ nebo $(a_n)_{n=1}^\inf$.
+se zapisuje $\{a_1, a_2, \dots, a_k, \dots\}$ nebo $(a_n)_{n=1}^\infty$.
 
 Ve zbytku této otázky budu, pokud to neřeknu jinak, pracovat s neomezenými posloupnostmi.
 
@@ -37,7 +37,7 @@ Ve zbytku této otázky budu, pokud to neřeknu jinak, pracovat s neomezenými p
 Tato metoda je vhodná pro konečné posloupnosti nebo pro ty, kde jde z prvních členů určit závislost,
 ze které jde určit členy následující.
 
-$(a_n)_{n=1}^6 = \{4, -3, 20, 22, -15, 42\}$, $(b_n)_{n=1}^\inf$ $= \{2, 4, 6, 8, \dots\}$
+$(a_n)_{n=1}^6 = \{4, -3, 20, 22, -15, 42\}$, $(b_n)_{n=1}^\infty$ $= \{2, 4, 6, 8, \dots\}$
 
 \begin{tabular}{|c|c|c|c|c|}
 \hline
@@ -127,7 +127,7 @@ a_n \ge d$
 
 Příklady: $a_n = n^2 + 6$, $a_n = a_{n-1} + 5, a_1 = -9$
 
-Posloupnost je omezená právě tehdy, když: $\exists h \in \mathbb{R} \quad \exists d \in \matbb{R}
+Posloupnost je omezená právě tehdy, když: $\exists h \in \mathbb{R} \quad \exists d \in \mathbb{R}
 \quad \forall n \in D : d \le a_n \le h$
 
 Příklady: $a_n = \sin(n)$, $a_n = a_{n-1} \cdot (-1), a_1 = 1$
@@ -138,7 +138,7 @@ odhadem. Řekněme že máme posloupnost $a_n = \frac{(-1)^n}{n}$. Poté co dám
 absolutní hodnoty získáme $\frac{1}{n}$. Tím zjišťujeme: $|a_n| < 1$. Díky tomu víme, že omezenost
 zhora je číslem 1 a omezenost zdola je číslem -1.
 \subsection*{Artitmetická posloupnost}
-Posloupnost se nazývá aritmetická právě tehdy, když: $\exists d \in \mathbb{R} \quad \all n \in D
+Posloupnost se nazývá aritmetická právě tehdy, když: $\exists d \in \mathbb{R} \quad \forall n \in D
 : a_n = a_{n-1} + d$
 
 Číslo $d$ se nazývá diference aritmetické poslouposti.
@@ -271,8 +271,8 @@ platí:
 
 $s_n = \begin{cases} 
     a_1 \cdot n & \text{pro } q = 1 \\
-    a_1 \cdot \frac{q^n - 1}{q - 1} & \text{pro } q \neq 1$ 
-\end{cases}
+    a_1 \cdot \frac{q^n - 1}{q - 1} & \text{pro } q \neq 1 
+\end{cases}$
 
 Přímý důkaz:
 \[
@@ -291,6 +291,135 @@ Přímý důkaz:
 \end{align*}
 \]
 \subsection*{Limita posloupnosti}
-pozn. Každá monotónní a omezená posloupnost je konvergentní. to zmin
+Limita posloupnosti se vždy určuje v nevlastním bodě. Kvůli tomu, že definiční obor jsou přirozená
+čísla, není možné se blížit k bodu jako u funkce. Nejbližší soused 2 na ose x je 1 a 3. Pokud by jsi
+chtěl také zjistit hodnotu limity ve vlastním bodě pro n = 5, limita by byla prostě $a_5$.
+\subsubsection*{Vlastní limita}
+$A \in \mathbb{R}$ se nazývá vlastní limita posloupnosti právě tehdy, když:
+
+$\forall \varepsilon > 0 \quad \exists n_0 \in \mathbb{N} \quad \forall n \ge n_0 : |a_n - A| <
+\varepsilon$
+
+Co ta definice vlastně říká? Když vezmem jakékoliv epsilon, neboli okolí či šedý pás. Existuje nějaký
+člen posloupnosti, že všechny členy za ním budou už v tom okolí od epsilonu. Dejme tomu, že bychom
+měli posloupnost $a_n = \frac{1}{n}$. Od pohledu je zřejmé, že limita této posloupnosti je nula.
+Dejme tomu, že bychom chtěli $\varepsilon = 0,01$. $n_0$ bude pro nás 101. Je vidět, že
+$|\frac{1}{101} - 0| < 0.01|$ platí. Jak se bude zvětšovat $n$ v jmenovateli, je vidět, že toto bude
+platit i pro všechny následující členy posloupnosti. Pozor na to, že to nemůže být teprve 100. člen,
+ten je roven $\varepsilon$ a je na pomyslé mezi okolí.
+
+Máme posloupnost $a_n = \frac{2n + 1}{n}$. Její limita je:
+
+$\lim_{n \to \infty} a_n = 2$
+
+Kvůli definičnímu oboru se určuje vždy limita jen pro $+\infty$.
+Posloupnost která má vlastní limitu se nazývá konvergentní. Posloupnost která není konvergentní se
+nazývá divergentní.
+\subsubsection*{Nevlastní limita}
+Posloupnost má nevlastní limitu pokud platí buď:
+
+$\forall K \in \mathbb{R} \quad \exists n_0 \in \mathbb{N} \quad \forall n > n_0 : a_n > K$
+
+nebo platí:
+
+$\forall L \in \mathbb{R} \quad \exists n_0 \in \mathbb{N} \quad \forall n > n_0 : a_n < L$
+
+Tato definice je poměrně všeříkající. Když je limita posloupnosti $+\infty$, pro každé reálné $K$
+existuje člen posloupnsti, od kterého jsou všechny následující členy větší než $K$.
+
+Máme posloupnost $a_n = -(n^2) + 2$. Její limita je:
+
+$\lim_{n \to \infty} a_n = -\infty $
+\subsubsection*{Limity speciálních posloupností}
+Pokuď máme aritmetickou posloupnost s diferencí $d$, posloupnost je konvergentní pokud je $d = 0$.
+Pokud se $d \neq 0$ posloupnost je divergentní.
+
+Pokuď máme geometrickou posloupnost s kvocientem $q$, posloupnost je konvergentní pokud je $q = 1$.
+Její $\lim_{n \to \infty} a_n = a_1$. Je také konvergentní pokud $|q| < 1$. Limita této posloupnosti
+je $\lim_{n \to \infty} a_n = 0$. Pokud je $q \le -1$ nebo $q > 1$, posloupnost je divergentní.
+\subsubsection*{Věty o limitách}
+Pokud posloupnost nemá vlastní ani nevlastní limitu, tak se nazývá oscilujicí.
+
+Každá posloupnost má nejvýše jednu limitu.
+
+Každá posloupnost která je zároveň omezená a monotónní je konvergentní. Zároveň platí, že každá
+konvergentní posloupnost je omezená, ale nemusí být monotónní. Například $a_n = \frac{(-1)^n}
+{n}$ je konvergentní, je omezená, ale tím, že se neustále mění znaménka není monotónii.
+
+Každá shora omezená neklesající posloupnost je konvergentní.
+
+Každá zdola omezená neroustoucí posloupnost je konvergentní.
+\subsection*{Nekonečná řada}
+Nekonečná řada je součet všech prvků nekonečné posloupnosti. Zapisuje se jako
+$\sum_{n=1}^{\infty} a_n$
+
+Řada se nazývá konvergentní, pokud je její součet realné číslo. Pokud není konvergentní, nazývá se
+divergentní. Divergentní řady buď mají součet $\pm \infty$ nebo oscilují a jejich součet nelze určit.
+
+Pro zjištění součtu řady a toho zda je konvergentní se využívá posloupnost částečných součtů.
+Pro posloupnost $a_n = \frac{1}{2^n} = \{\frac{1}{2}, \frac{1}{4}, \frac{1}{8}, \frac{1}{16},
+\dots\}$ vypadá posloupnost částečných součtů vypadá následovně.
+
+\[
+\begin{align*}
+&s_1 = a_1 = \frac{1}{2} = 0,5 \\
+&s_2 = a_1 + a_2 = \frac{1}{2} + \frac{1}{4} = 0,75 \\
+&s_3 = a_1 + a_2 + a_3 = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} = 0,875 \\
+&s_4 = a_1 + a_2 + a_3 + a_4 = \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} = 0,9375 \\
+&\dots
+\end{align*}
+\]
+
+Součet řady je definován jako limita posloupnosti částečných součtů.
+
+$\sum_{n=1}^{\infty} a_n = \lim_{n \to \infty} s_n$
+
+Řada je konvergentní právě tehdy, když je konvergentní posloupnost částečných součtů. Pro původní
+posloupnost, pro kterou děláme součet řady musí také platit: $\lim_{n \to \infty} a_n = 0$.
+
+Speciálním typem nekonečné řady je nekonečná geometrická řada. U tohoto typu řady se jednodušše určuje
+zda řada konverguje nebo diverguje. Pokud je $|q| < 1$ řada konverguje. Když je $|q| \ge 1$ řada
+diverguje. Pokud je geometrická řada konvergentní, platí pro ní:
+
+$\sum_{n=1}^\infty a_n = \lim_{n \to \infty} s_n = a_1 \frac{1}{1-q}.$
+
+Tohle jde poměrně jednodušše dokázat. Už u geometrické řady jsem si odvozovali vzorec pro součet
+n prvních čísel $s_n = a_1\frac{q^n -1}{q-1}$. Nás ale zajímá součet pro všechna čísla nekonečné
+posloupnosti takže $n = \infty$. Pokud máme číslo menší než 1 a větší než -1 a nekonečně krát ho
+pronásobíme mezi sebou, tak se limitně bude blížit k 0. Tím pádem tento člen můžeme odendat a zbyde
+nám $s_n = a_1 \frac{-1}{q - 1}$ což se dá také přepsat jako $s_n = a_1 \frac{1}{1 - q}$.
+
+U zkoušení také může být dotaz jak se převádí periodický desetinný rozvoj na zlomek. Dejme tomu že
+máme číslo $1,2\overline{3}$. Nejdříve odendáme pevnou část od té periodické, tedy rozdělíme číslo
+na $1,2$ a $0,0\overline{3}$. $1,2$ se dá zapsat jako $\frac{6}{5}$. $0,0\overline{3}$ si lze vyjádřit
+jako geometrickou posloupnost s $a_1 = 0,03$ a s kvocientem $q = 0,1$. Následně vypočítáme součet
+této řady pomocí vzorce $s = \frac{a_1}{1-q} = \frac{0,03}{1-0,1} = \frac{0,03}{0,9} = \frac{1}{30}$.
+Posléze tyto oba zlomky sečteme a získáme $\frac{37}{30}$.
+
+\subsection*{Finanční matematika}
+Jednoduché úročení funguje tak, že si uložíme nějaké peníze a každý rak se nám bude připisovat nějaké
+procento z původě vložené částky. Pokud bychom vložili 100 Kč s úrokem 10\%, budeme mít po 1. roce
+110 Kč, po druhém roce 120 Kč atd. Pro vypočítání toho kolik bychom měli v roce n použijeme vzorec
+aritmetické posloupnosti $a_n = a_0(1 + n \cdot u)$ přičemž $u$ je vyjádřena jako desetinné číslo.
+Kdybychom museli platit i daň z úroku například 15\%, museli bychom to přídat do vzorce jako
+$a_n = a_0(1 + n \cdot u \cdot 0,85)$ a obecně $a_n = a_0(1 + n \cdot u \cdot (1 - d))$ kdy $d$ je
+daň vyjádřena jako desetinné číslo.
+
+Složené úroční je podobné, až na to že se pří něm úročí i úroky. Použijme stejný přiklad. Po prvním
+roce by jsem měli znovu 110 Kč, až na to, že bychom ten 10\% úrok měli dostat už z těch 110 Kč. 
+Pro vypočítání složeného úročení využijeme vzorec $a_n = a_0(1 + u)^n$. Kdybychom museli i
+odvádět daň, vzorec by vypadal takto $a_n = a_0(1 + u \cdot (1 - d))^n$.
+
+Ukládání peněz funguje jako složené úročení, ale místo toho, abychom vložili peníze pouze na
+začatku tak peníze postupně ještě přídáváme. Pro zjednodušení budeme přidávat peníze stejně často
+jako se nám úročí peníze. Dejme tomu, že budeme každý rok vkládat 100 Kč s úrokem 10\% a to budeme
+dělat po dobu 10 let. Náš první vklad se nám za těch 10 let zúročí desetkrát, tedy jen z toho
+prvního vkladu budeme mít $a_0(1 + u)^n$ peněz. Z druhého vkladu budeme mít $a_0(1 + u)^{n-1}$ peněz.
+Můžeme si všimnout že tohle nám dáva konečnou geometrickou řadu $\{a_0 \cdot (1 + u)^1, a_0 \cdot
+(1 + u)^2, \dots, a_0 \cdot (1 + u)^{n-1}, a_0 \cdot (1 + u)^n\}$. Nás zajíma součet této posloupnosti
+kterou můžeme spočítat vzorcem $s_n = a_1\frac{q^n - 1}{q - 1}$. Tento vzorec si upravíme pro naše
+potřeby na $s_n = a_0 \cdot (1 + u) \cdot \frac{(1 + u)^n - 1}{u}$. Kdyby se úroky museli danit,
+vzorec by se změnil na $s_n = a_0 \cdot (1 + u \cdot (1 - d)) \cdot \frac{(1 + u \cdot (1 - d))^n - 1}
+{u \cdot (1 - d)}$.
 \end{document}
 
