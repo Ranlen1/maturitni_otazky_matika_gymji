@@ -28,7 +28,7 @@ posloupnost s konečným definičním oborem, nekonečná posloupnost ho má nek
 
 Konečná posloupnost s n-tým členem $a_n$ a s definičním oborem $\{1, 2, \dots, k\}$ se zapisuje
 $\{a_1, a_2, \dots, a_k\}$ nebo $(a_n)_{n=1}^k$. Nekonečná posloupnost s n-tým členem $a_n$
-se zapisuje $\{a_1, a_2, \dots, a_k, \dots\}$ nebo $(a_n)_{n=1}^\infty$.
+se zapisuje $\{a_1, a_2, a_3, \dots\}$ nebo $(a_n)_{n=1}^\infty$.
 
 Ve zbytku této otázky budu, pokud to neřeknu jinak, pracovat s neomezenými posloupnostmi.
 
@@ -46,7 +46,7 @@ $c_n$ & 3 & 9 & 27 & 81 \\ \hline
 \end{tabular}
 \subsubsection*{Graf}
 Metoda grafem se využívá ve stejných případech jako metoda výčtem. Jeho výhoda oproti výčtu je jeho
-názornost a lehčeji se z něj určuje závislost posloupnosti. Pro posloupnost
+názornost a snadněji se z něj určuje závislost posloupnosti. Pro posloupnost
 $(a_n)_{n=1}^7 = \{0, 1, 1, 2, 3, 5, 8\}$ by vypadal graf následovně:
 \begin{center}
 \begin{tikzpicture}
@@ -136,13 +136,13 @@ Omezenost posloupnosti budeš pravděpodobně dokazovat u klesajicí nebo rostou
 víš, že $a_1$ bude buď globální maximum nebo minimum a tím zjistíš její omezenost. Další metoda je
 odhadem. Řekněme že máme posloupnost $a_n = \frac{(-1)^n}{n}$. Poté co dáme její předpis do
 absolutní hodnoty získáme $\frac{1}{n}$. Tím zjišťujeme: $|a_n| < 1$. Díky tomu víme, že omezenost
-zhora je číslem 1 a omezenost zdola je číslem -1.
+shora je číslem 1 a omezenost zdola je číslem -1.
 \subsection*{Artitmetická posloupnost}
 Posloupnost se nazývá aritmetická právě tehdy, když: $\exists d \in \mathbb{R} \quad \forall n \in D
 : a_n = a_{n-1} + d$
 
 Číslo $d$ se nazývá diference aritmetické poslouposti.
-\subsubsection*{Vlastnosti a vzthay pro aritmetické posloupnosti}
+\subsubsection*{Vlastnosti a vztahy pro aritmetické posloupnosti}
 Monotónnost:
 
 $\text{rostoucí} \leftrightarrow d > 0$
@@ -157,7 +157,7 @@ $\text{zdola omezená} \leftrightarrow d > 0$
 
 $\text{omezená} \leftrightarrow d = 0$
 
-Každý člen aritmetické posloupnosti s vyjímkou prvního je aritmetickým průměrem svých sousedů.
+Každý člen aritmetické posloupnosti s výjimkou prvního je aritmetickým průměrem svých sousedů.
 
 $\forall n \in \mathbb{N} - \{1\} : a_n = \frac{a_{n-1} + a_{n+1}}{2}$
 
@@ -292,7 +292,7 @@ Přímý důkaz:
 \]
 \subsection*{Limita posloupnosti}
 Limita posloupnosti se vždy určuje v nevlastním bodě. Kvůli tomu, že definiční obor jsou přirozená
-čísla, není možné se blížit k bodu jako u funkce. Nejbližší soused 2 na ose x je 1 a 3. Pokud by jsi
+čísla, není možné se blížit k bodu jako u funkce. Nejbližší soused 2 na ose x je 1 a 3. Pokud bys
 chtěl také zjistit hodnotu limity ve vlastním bodě pro n = 5, limita by byla prostě $a_5$.
 \subsubsection*{Vlastní limita}
 $A \in \mathbb{R}$ se nazývá vlastní limita posloupnosti právě tehdy, když:
@@ -306,7 +306,7 @@ měli posloupnost $a_n = \frac{1}{n}$. Od pohledu je zřejmé, že limita této 
 Dejme tomu, že bychom chtěli $\varepsilon = 0,01$. $n_0$ bude pro nás 101. Je vidět, že
 $|\frac{1}{101} - 0| < 0.01|$ platí. Jak se bude zvětšovat $n$ v jmenovateli, je vidět, že toto bude
 platit i pro všechny následující členy posloupnosti. Pozor na to, že to nemůže být teprve 100. člen,
-ten je roven $\varepsilon$ a je na pomyslé mezi okolí.
+ten je roven $\varepsilon$ a je na pomyslné mezi okolí.
 
 Máme posloupnost $a_n = \frac{2n + 1}{n}$. Její limita je:
 
@@ -342,7 +342,7 @@ Pokud posloupnost nemá vlastní ani nevlastní limitu, tak se nazývá osciluji
 
 Každá posloupnost má nejvýše jednu limitu.
 
-Každá posloupnost která je zároveň omezená a monotónní je konvergentní. Zároveň platí, že každá
+Každá posloupnost, která je zároveň omezená a monotónní je konvergentní. Zároveň platí, že každá
 konvergentní posloupnost je omezená, ale nemusí být monotónní. Například $a_n = \frac{(-1)^n}
 {n}$ je konvergentní, je omezená, ale tím, že se neustále mění znaménka není monotónii.
 
@@ -397,16 +397,23 @@ této řady pomocí vzorce $s = \frac{a_1}{1-q} = \frac{0,03}{1-0,1} = \frac{0,0
 Posléze tyto oba zlomky sečteme a získáme $\frac{37}{30}$.
 
 \subsection*{Finanční matematika}
-Jednoduché úročení funguje tak, že si uložíme nějaké peníze a každý rak se nám bude připisovat nějaké
-procento z původě vložené částky. Pokud bychom vložili 100 Kč s úrokem 10\%, budeme mít po 1. roce
+
+Úrok je konkrétní suma, kterou zaplatí člověk navíc u půjčky nebo navíc dostane při spoření. Pokud by
+si člověk půjčil 100 Kč a po týdnu musel vrátit 105 Kč, úrok je 5 korun.
+
+Úroková sazba udává velikost úroku. Uvádí se v procentech pro nějaké období, většinou roční. Úroková
+sazba 5\% p.a. znamená, že pokud si půjčíme 100 Kč, budeme po roce muset vrátit 105.
+
+Jednoduché úročení funguje tak, že si uložíme nějaké peníze a každý rok se nám bude připisovat nějaké
+procento z původně vložené částky. Pokud bychom vložili 100 Kč s úrokem 10\%, budeme mít po 1. roce
 110 Kč, po druhém roce 120 Kč atd. Pro vypočítání toho kolik bychom měli v roce n použijeme vzorec
 aritmetické posloupnosti $a_n = a_0(1 + n \cdot u)$ přičemž $u$ je vyjádřena jako desetinné číslo.
-Kdybychom museli platit i daň z úroku například 15\%, museli bychom to přídat do vzorce jako
+Kdybychom museli platit i daň z úroku například 15\%, museli bychom to přidat do vzorce jako
 $a_n = a_0(1 + n \cdot u \cdot 0,85)$ a obecně $a_n = a_0(1 + n \cdot u \cdot (1 - d))$ kdy $d$ je
 daň vyjádřena jako desetinné číslo.
 
 Složené úroční je podobné, až na to že se pří něm úročí i úroky. Použijme stejný přiklad. Po prvním
-roce by jsem měli znovu 110 Kč, až na to, že bychom ten 10\% úrok měli dostat už z těch 110 Kč. 
+roce bychom měli znovu 110 Kč, až na to, že bychom ten 10\% úrok měli dostat už z těch 110 Kč. 
 Pro vypočítání složeného úročení využijeme vzorec $a_n = a_0(1 + u)^n$. Kdybychom museli i
 odvádět daň, vzorec by vypadal takto $a_n = a_0(1 + u \cdot (1 - d))^n$.
 
@@ -416,8 +423,9 @@ jako se nám úročí peníze. Dejme tomu, že budeme každý rok vkládat 100 K
 dělat po dobu 10 let. Náš první vklad se nám za těch 10 let zúročí desetkrát, tedy jen z toho
 prvního vkladu budeme mít $a_0(1 + u)^n$ peněz. Z druhého vkladu budeme mít $a_0(1 + u)^{n-1}$ peněz.
 Můžeme si všimnout že tohle nám dáva konečnou geometrickou řadu $\{a_0 \cdot (1 + u)^1, a_0 \cdot
-(1 + u)^2, \dots, a_0 \cdot (1 + u)^{n-1}, a_0 \cdot (1 + u)^n\}$. Nás zajíma součet této posloupnosti
-kterou můžeme spočítat vzorcem $s_n = a_1\frac{q^n - 1}{q - 1}$. Tento vzorec si upravíme pro naše
+(1 + u)^2, \dots, a_0 \cdot (1 + u)^{n-1}, a_0 \cdot (1 + u)^n\}$. Nás zajíma součet této
+posloupnosti,
+který můžeme spočítat vzorcem $s_n = a_1\frac{q^n - 1}{q - 1}$. Tento vzorec si upravíme pro naše
 potřeby na $s_n = a_0 \cdot (1 + u) \cdot \frac{(1 + u)^n - 1}{u}$. Kdyby se úroky museli danit,
 vzorec by se změnil na $s_n = a_0 \cdot (1 + u \cdot (1 - d)) \cdot \frac{(1 + u \cdot (1 - d))^n - 1}
 {u \cdot (1 - d)}$.
