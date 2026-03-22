@@ -57,18 +57,60 @@ interactive.php}{odkaz}
 
 \subsection*{Kružnice}
 Kružnice je mnotina všech bodů v rovině, které mají od bodu $S$ stejnou vzdálenost $r$. Bod $S$ se 
-nazává střed kružnice, hodnota $r$ se nazývá poloměr kružnice. Rovnice $(x = m)^2 + (y - n)^2 = r^2$
-se nazývá středovou rovnicí kružnice se středem $S[m, n]$ a poloměrem $r$. Tato rovnice využíva
-pythagorovou větu. Pokud by střed kružnice ležel v počátku, rovnice nabývá tvaru $x^2 + y^2 = r^2$.
+nazává střed kružnice, hodnota $r$ se nazývá poloměr kružnice. Rovnice $(x - m)^2 + (y - n)^2 = r^2$
+se nazývá středovou rovnicí kružnice se středem $S[m, n]$ a poloměrem $r$. Souřadnice x a y jsou
+souřadnice libovolného bodu ležicího na kružnici. Tato rovnice využíva princim pythagorovy věty. 
+Předpis $a^2 + b^2 = c^2$ si upravíme tak, že $a = (x - m)$ je délka vodorovné odvěsny, $b = (y - n)$
+je délka svislé odvěsny a $c = r$ je délka přepony. Pokud by střed kružnice ležel v počátku, rovnice
+nabývá tvaru $x^2 + y^2 = r^2$.
 Rovnice $x^2 + y^2 - 2mx - 2ny + p + m^2 + n^2 - r^2 = 0$. Tato rovnice vniká
 roznásobením středové rovnice a nazývá se obecná rovnice. Z obecné rovnice se dělá středová rovnice
 pomocí doplnění na čverec.
 
-pozn. dodej ukazku doplneni na ctverec
+Příklad: Urči střed a poloměr kružnice daná rovnicí $x^2 + y^2 - 6x + 4y - 3 = 0$
+\[
+\begin{align*}
+    x^2 + y^2 - 6x + 4y - 3 &= 0 \\
+    (x - 3)^2 - 9 + (y + 2)^2 - 4 - 3 &= 0 \\
+    (x - 3)^2 + (y + 2)^2 &= 4^2
+\end{align*}
+\]
 
-Další úloha, kterou je rovnice tečny kružnice.
+Z toho zjistíme, že poloměr je 4 a střed má souřadnice [3, -2].
 
-pozn. tohle proste dodelej
+V rovině nastávají 3 různé vzájemné polohy kružnice a přímky. Prvním z nich je vnější přímka.
+Tato přímka leží vně kružnice a nemají žádný společný bod.
 
+Dalším typem přímky je tečna. Ta má s
+kružnicí jeden společný bod. Pro kružnici danou rovnicí $(x - m)^2 + (y - n)^2 = r^2$ má v bodě
+T$[x_0, y_0]$ tečnu s předpisem $(x_0 - m)(x - m) + (y_0 - n)(y - n) = r^2$.
+
+Posledním typem přímky je sečna, která prochází kružnicí a má tedy 2 společné body. Speciálním typem
+sečny je polára. Z kazdeho bodu mimo kružnici lze pro danou kružnici sestrojit dvě tečny. Polára je
+sečna, která prochází oběma body doteku tečen. Rovnice polári pro kružnici $(x - m)^2 + (y - n)^2 =
+r^2$ a bod R$[r_1, r_2]$ je $(r_1 - m)(x - m) + (r_2 - n)(y - n) = r^2$
+
+Dokázáni vzorce pro tečnu budeme dělat s kružnicí se středem $S[m, n]$, bodem dotyku tečny
+$T[x_0, y_0]$. Libovolný bod $X[x, y]$, leží na tečně právě tehdy, ktyž je $\vec{ST}$ kolmý na
+$\vec{TX}$.
+
+Přímý důkaz:
+\[
+\begin{align*}
+    \vec{ST} = T - S &= (x_0 - m, y_0 - n) \\
+    \vec{TX} = X - T &= (x - x_0, y - y_0) \\
+\end{align*}
+\]
+Vektory jsou na sebe kolmé, pokud je jejich skalární součin roven 0.
+\[
+\begin{align*}
+    (x_0 - m)(x - x_0) + (y_0 - n)(y - y_0) &= 0 \\
+    (x_0 - m)(x - m + m - x_0) + (y_0 - n)(y - n + n - y_0) &= 0 \\
+    (x_0 - m)((x - m) - (x_0 - m)) + (y_0 - n)((y - n) - (y_0 - n)) &= 0 \\
+    (x_0 - m)(x - m) - (x_0 - m)^2 + (y_0 - n)(y - n) - (y_0 - n)^2 &= 0 \\
+    (x_0 - m)(x - m) + (y_0 - n)(y - n) &= (x_0 - m)^2 + (y_0 - n)^2 \\
+    (x_0 - m)(x - m) + (y_0 - n)(y - n) &= r^2 \quad \square
+\end{align*}
+\]
 \subsection*{Elipsa}
 \end{document}
