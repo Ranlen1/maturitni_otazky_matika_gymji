@@ -1,0 +1,102 @@
+% basic nastaveni
+\documentclass[12pt]{article}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{1em}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{graphics}
+\usepackage{caption}
+\usepackage{hyperref}
+
+% matematicke package
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{geometry}
+\geometry{margin=2.5cm}
+\usepackage{pgfplots}
+\pgfplotsset{campat=1.18}
+
+\title{Maturitní otázka číslo 14: Zobrazení v rovině}
+\author{}
+\date{}
+
+\begin{document}
+\maketitle
+
+\subsection*{Co to je zobrazení}
+Zobrazení $f$ v rovině je předpis, který každému bodu $X$ roviny přiřazuje právě jeden bod $X'$ této
+roviny. Bod $X$ se nazývá vzor a bod $X'$ obraz. Zapisujeme to jako $f(X) = X'$ nebo $f : X.
+\mapsto X'$. Zobrazení se nazývá prosté právě tehdy, když každé dva různé body $X, Y$ zobrazí na dva
+různé body $X', Y'$ roviny. To je důležité pokud bychom chtěli dělat zobrazení inverzní, pokud by
+zobrazení nebylo prosté, nešlo by zjistit původní vzor.
+
+Máme-li zobrazení $f$ v rovině, samodružný bod je takový bod $X$, který se zobrazí sám na sebe, tedy
+platí $f(X) = X$. Samodružná přímka $p$ je taková přímka, která se zobrazí do sebe sama, tedy platí
+$f(p) = p$.
+
+\subsection*{Shodná zobrazení}
+Zobrazení se nazývá shodné zobrazení, pokud pro každé dva body $X, Y$ roviny a jejich obrazy $X', Y'$
+platí $|XY| = |X'Y'|$. Obrazem každého geometrického útvaru je geometrický útvar schodný, tedy obraz
+se dá tak přemístit, že se vzor s ním kryje. Specifickým typem shodného zobrazení je identické
+zobrazení, které každému bodu $X$ roviny přiřazuje ten stejný bod $f(X) = X$.
+
+Schodná zobrazení se dále dělí na přímou a nepřímou schodnost. Představme si trojúhelník, které ma
+svoje vrcholy popsané proti směru hodinových ručiček. Příma schodnot nechá směr pojmenování
+trojúhelníku stejný a patří mezi ní identita, posunutí, otočení a středová souměrnost. Nepřímá
+schodnot vytvoří trojúhelník který bude schodný, ale bude pojmenován po směru hodinových ručiček. Jde
+si to představit jako kdyby ho nekdo vzal a otočil jako palačinku. Mezi nepřímou schodnost patří
+osová souměrnost.
+\subsubsection*{Středová souměrnost}
+Středová souměrnost $S(S)$ se středem v bodě $S$ je zobrazení ve kterém se bod $S$ zobrazí na bod
+$S' = S$ a každý bod $X$, který není $S$ se zobrazí tak, že bod $S$ je středem úsečky $XX'$. Platí
+tedy, že $|XS| = |SX'|$. Bod $S$ se nazývá střed souměrnosti. Středová souměrnost se středem
+souměrnosti v bodě $S$ se zapisuje jako $S(S) : X \mapsto X'$ a udává že bod $X'$ je obrazem bodu $X$.
+
+Samodružným bodem středové souměrnosti je střed souměrnosti a samodružné přímky jsou všechny
+přímky, které prochází středem souměrnosti.
+
+Při konstrukcích se často využívá to, že jsou nějaké útvary středově souměrné. Patří mezi ně
+například čtverec, obdélník, kružnice, kosočtverec nebo kosodélník. Středem souměrnosti kružnice je
+její střed. U ostatních vyjmenovaných útvarů je to průsečík jejich úhlopříček.
+\subsubsection*{Posunutí}
+Posunutí $T(AB)$ neboli translace určené orientovanou úsečkou $AB$ je zobrazení, ve kterém se zobrazí
+bod $X$ na bod $X'$ tak, že orientované úsečky $AB$ a $XX'$ jsou rovnoběžné a mají stejnou délku
+a směr. Orientovaná úsečka se také nazývá vektor posunutí. Posunutí vektorem $\vec{AB}$ se zapisuje
+jako $T(AB) : X \mapsto X'$ a udává že bod $X'$ je obrazem bodu $X$. 
+
+Samodružný bod existuje pokud je vektor posunutí roven nule a budou jím všechny body roviny. Jinak
+posunutí samodružný bod nemá. Samodružná přímka vzniká pokud je přímka rovnoběžná s vektorem posunutí.
+\subsubsection*{Otočení}
+Otočení $R(S, \alpha)$ neboli rotace určená bodem S a orientovaným úhlem $\alpha$ je zobrazení, ve
+kterém se bod $S$ zobrazí na bod $S' = S$ a každý bod $X$ který není $S$ na bod $X'$ tak, že
+$|XS| = |X'S|$ a orientované úhly $XSX'$ a $\alpha$ mají stejnou velikost a jsou stejně orientované.
+Bod $S$ se nazývá střed otočení a orientovaný úhel $\alplha$ se nazývá úhel otočení. Otočení se
+středem otočení v bodě $S$ a orientovaným úhlem $\alpha$ se zapisuje jako $R(S, \alpha) : X \mapsto
+X'$ a udává že bod $X'$ je obrazem bodu $X$.
+
+Středová souměrnost je speciálním typem otočení a to o $180^\circ$.
+
+Soudružný bod existuje v bodu otáčení a nebo je tvoří celá rovina, pokud je $\alpha = k \cdot
+360^\circ, k \in \mathbb{Z}$. Soudružnou přímku získáme pokud pokud je znovu $\alpha = k \cdot
+360^\circ, k \in \mathbb{Z}$ a nebo pokud přímka prochází středem otáčení a $\alpha = 180^\circ + k
+\cdot 360^\circ, k \in \mathbb{Z}$.
+\subsubsection*{Osová souměrnost}
+Osová souměrnost $O(o)$ s osou $o$ je zobrazení, ve kterém se zobrazí každý bod $X$ na ose $o$ na bod
+$X' = X$ a každý bod $X$ který neleží na ose na bod $X'$ tak, že úsečka $XX'$ je kolmá na osu a střed
+$S$ úsečky $XX'$ leží na ose. Platí tedy, že $|XS| = |SX'|$. Přímka o se nazývá osa souměrnosti.
+Osovou souměrnost s osou $o$ se zapisuje jako $O(o) : X \mapsto X'$ a udává že bod $X'$ je obrazem
+bodu $X$.
+
+Všechny samodružné body leží na ose souměrnosti. Samodružné přímky jsou všechny přímky kolmé na osu
+souměrnosti a samotná osa.
+
+Při konstrukcích se často využívá to, že jsou nějaké útvary osově souměrné. Patří mezi ně
+například čtverec, obdélník, kružnice, kosočtverec nebo kosodélník.
+
+\subsection*{Podobná zobrazení}
+to do
+zmin ze kazda shodnost je podobne zobrazeni s koeficientem 1, ne naopak
+
+\end{document}
