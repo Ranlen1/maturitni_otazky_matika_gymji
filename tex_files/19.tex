@@ -57,15 +57,15 @@ interactive.php}{odkaz}
 
 \subsection*{Kružnice}
 Kružnice je množina všech bodů v rovině, které mají od bodu $S$ stejnou vzdálenost $r$. Bod $S$ se 
-nazává střed kružnice, hodnota $r$ se nazývá poloměr kružnice. Rovnice $(x - m)^2 + (y - n)^2 = r^2$
+nazývá střed kružnice, hodnota $r$ se nazývá poloměr kružnice. Rovnice $(x - m)^2 + (y - n)^2 = r^2$
 se nazývá středovou rovnicí kružnice se středem $S[m, n]$ a poloměrem $r$. Souřadnice x a y jsou
-souřadnice libovolného bodu ležicího na kružnici. Tato rovnice využíva princim pythagorovy věty. 
+souřadnice libovolného bodu ležicího na kružnici. Tato rovnice využíva princip pythagorovy věty. 
 Předpis $a^2 + b^2 = c^2$ si upravíme tak, že $a = (x - m)$ je délka vodorovné odvěsny, $b = (y - n)$
 je délka svislé odvěsny a $c = r$ je délka přepony. Pokud by střed kružnice ležel v počátku, rovnice
 nabývá tvaru $x^2 + y^2 = r^2$.
 Rovnice $x^2 + y^2 +Dx + Ey + F = 0$. Tato rovnice vniká
 roznásobením středové rovnice a nazývá se obecná rovnice. Z obecné rovnice se dělá středová rovnice
-pomocí doplnění na čverec.
+pomocí doplnění na čtverec.
 
 Příklad: Urči střed a poloměr kružnice daná rovnicí $x^2 + y^2 - 6x + 4y - 3 = 0$
 \[
@@ -124,20 +124,19 @@ a je délka hlavní osy.
 \end{figure}
 
 U středové rovnice elipsy se středem $S[m, n]$ závisí na poloze hlavní osy. Pokud je hlavní osa
-rovnoběžná s osou x, rovnice je ve tvaru $\frac{(x - m)^2}{a^2} + \frac{(y - n)^2}{b^2} = 1$, pokud
-je hlavní osa rovnoběžná s osou y, rovnice je ve tvaru
+rovnoběžná s osou x, rovnice je ve tvaru $\frac{(x - m)^2}{a^2} + \frac{(y - n)^2}{b^2} = 1$. 
 
-$\frac{(x - m)^2}{b^2} + \frac{(y - n)^2}{a^2}
-= 1$.
+Pokud je hlavní osa rovnoběžná s osou y, rovnice je ve tvaru $\frac{(x - m)^2}{b^2} +
+\frac{(y - n)^2}{a^2} = 1$.
 
-Obecná rovnice elipsy je $Ax^2 + Cy^2 + Dx + Ey + F = 0$. Od kružnice se liší tím, že koeficienty
+Obecná rovnice elipsy je $Ax^2 + By^2 + Cx + Dy + E = 0$. Od kružnice se liší tím, že koeficienty
 A a C nejsou stejné.
 
 Polohy elipsy a přímky fungují stejně jako u kružnice. Důležitý rozdíl je u tečny, protože přímka
 procházejícím jak středem tak bodem dotyku nemusí být kolmá na tečnu.
 
 Pro elipsu s rovnicí $\frac{(x - m)^2}{a^2} + \frac{(y - n)^2}{b^2} = 1$ a bodem $X[x_0, y_0]$je
-rovnicí tečny $\frac{(x_0 - m)(x - m)}{a^2} + \frac{(y_0 - n)(y - n}{b^2} = 1$. Pokud by byla hlavní
+rovnicí tečny $\frac{(x_0 - m)(x - m)}{a^2} + \frac{(y_0 - n)(y - n)}{b^2} = 1$. Pokud by byla hlavní
 osa rovnoběžná s osou y, ve vzorečku se prohodí jmenovatele. $\frac{(x_0 - m)(x - m)}{b^2} +
 \frac{(y_0 - n)(y - n}{a^2} = 1$
 
@@ -153,19 +152,79 @@ ohniska a řídící přímky se nazývá parametr paraboly.
     \caption*{Nákres paraboly}
 \end{figure}
 
-U vrcholové rovnice s vrcholem $V[m, n$ a parametrem $p$ záleží na tvaru paraboly. Pokud je osa
-paraboly rovnoběžná s osu $y$ a rozevírá se směrem ke kladnému y, rovnice je $(x - m)^2 = 2p(y - n)$.
-Pokud se rozevírá směrem k zápornému y, rovnice je $(x - m)^2 = -2p(y - n)$. Když je osa paraboly
-rovnoběžná s osou x a rozevírá se směrem ke kladnému x, rovnice je $(y - n)^2 =2 p(x - m)$. Když se
-parabola rozevírá směrem k zápornému x, rovnice je z $(y - n)^2 = -2p(x - m)$.
+U vrcholové rovnice s vrcholem $V[m, n]$ a parametrem $p$ záleží na tvaru paraboly. Pokud je osa
+paraboly rovnoběžná s osu $y$ a rozevírá se směrem ke kladnému $y$, rovnice je
+$(x - m)^2 = 2p(y - n)$.
+Pokud se rozevírá směrem k zápornému $y$, rovnice je $(x - m)^2 = -2p(y - n)$. Když je osa paraboly
+rovnoběžná s osou $x$ a rozevírá se směrem ke kladnému $x$, rovnice je $(y - n)^2 =2 p(x - m)$.
+Když se parabola rozevírá směrem k zápornému $x$, rovnice je z $(y - n)^2 = -2p(x - m)$.
 
-Tvar obecné rovnice se odvýjí od tvaru paraboly. Pokud je osa paraboly rovnoběžná s osou y, rovnice
-je $y = ax^2 + bx + c$. Pokud je osa paraboly rovnoběžná s osou x, rovnice je $x = ay^2 + by + c$.
+Tvar obecné rovnice se odvíjí od tvaru paraboly. Pokud je osa paraboly rovnoběžná s osou $y$, rovnice
+je $y = ax^2 + bx + c$. Pokud je osa paraboly rovnoběžná s osou $x$, rovnice je $x = ay^2 + by + c$.
 
-Sečna a tečna jsou definovány stejně, tedy že má dva a jeden průsečík. U rovnice tečny paraboly v
-bodě $T[x_0, y_0]$ zase záleží na tvaru paraboly. Parabola daná rovnicí $(x - m)^2 = \pm(y - n)$ má
+Sečna a tečna jsou definovány stejně jako u předešlích kuželoseček, ale pozor na přímku, která je
+rovnoběžná s osou paraboly. Ta i když má pouze jeden průsečík s parabolou se za tečnu nepovažuje. Říká
+se jí nevlastní sečna nebo sečna s jedním splečným bodem. U rovnice tečny paraboly v
+bodě $T[x_0, y_0]$ zase záleží na tvaru paraboly. Parabola daná rovnicí $(x - m)^2 = \pm 2p(y - n)$ má
 rovnici $(x_0 - m)(x - m) = \pm p(y_0 - n) \pm p(y - n)$. Parabola daná rovnicí $(y-n)^2 = \pm 
-2p(x - m)$ má rovnici $(y_0 - n)(y - n) = \pm p(x_0 - m) \pm p(x - m)$. Znaménka v druhé rovnici
-kopírují znaménka v první rovnici.
+2p(x - m)$ má rovnici $(y_0 - n)(y - n) = \pm p(x_0 - m) \pm p(x - m)$. Znaménka v rovnici pro tečnu
+kopírují znaménka ve vrcholové rovnici.
+
+\subsection*{Hyperbola}
+Hyperbola je množina všech bodů $X$ v rovině, které mají od dvou různých bodů $F_1, F_2$ pro které
+platí $0 < ||XF_1|-|XF_2|| < |F_1F_2|$.
+\begin{figure}[h] 
+    \centering    
+    \includegraphics[width=1.0\linewidth]{pictures/hyperbola.png}
+    \caption*{Nákres hyperboly}
+\end{figure}
+Narozdíl od elipsy nemusí být hlavní osa delší než vedlejší osa. Speciálním typem hyperboly je
+rovnoosá hyperbola kde mají obě osy stejnou délku.
+
+Tvar středové rovnice hyperboly se středem v $S[m,n]$ závisí na poloze hlavní osy. Pokud je hlavní
+osa rovnoběžná s osou $x$, má rovnici tvar $\frac{(x-m)^2}{a^2} - \frac{(y-n)^2}{b^2} = 1$.
+
+Pokud je hlavní osa rovnoběžná s osou $y$, má rovnice tvar $\frac{(x-m)^2}{b^2} - \frac{(y-n)^2}{a^2}
+= 1$.
+
+Obecná rovnice hyperboly je $AX^2 + BY^2 + CX + DY + E = 0$
+
+Pro hyperbolu danou rovnicí $\frac{(x-m)^2}{a^2} - \frac{(y-n)^2}{b^2} = 1$ jsou rovnice asymptot
+$y = \pm \frac{b}{a}(x-m) + n$. Pro hyperbolu danou rovnicí $\frac{(x-m)^2}{b^2} - \frac{(y-n)^2}{a^2}
+= 1$ jsou rovnice asymptot $y = \pm \frac{a}{b}(x-m)+n$.
+
+Sečna a tečna jsou definovány stejně jako u předešlých kuželoseček, ale pozor na přímku, která je
+rovnoběžná s asymptotou. Ta i když má pouze jeden průsečík s hyperbolou se za tečnu nepovažuje. Říká
+se jí nevlastní sečna nebo sečna s jedním splečným bodem.
+
+Rovnice tečny se středem v bodě $S[m,n]$ pro hyperbolu s vodorovnou osou $\frac{(x_0 - m)(x - m)}
+{a^2} - \frac{(y_0 - n)(y-n)}{b^2} = 1$ a pro hyperbolu se svilou osou $\frac{(y_0 - n)(y-n)}{a^2} -
+\frac{(x_0 - m)(x - m)}{b^2} = 1$.
+
+Pokud se rovnoosá hyperbola otočí o $45^\circ$ vznikne lineární lomená funkce která má asymptoty
+$a_1: x = m$ a $a_2: y = n$.
+\subsection*{Časté příklady}
+\subsubsection*{Rozpoznávání typu kuželoseček}
+Kružnice bude mít v rovnici $x^2$ a $y^2$ bez žádných koeficientů.
+
+Elipsa bude mít v rovnici $Ax^2$ a $By^2$, ale koeficienty budou mít stejná znaménka.
+
+Parabole bude v rovnici chybět buď $x^2$ nebo $y^2$.
+
+Hyperbola bude mít v rovnici $Ax^2$ a $By^2$ ale koeficienty budou mít rozdílná znaménka.
+\subsubsection*{Vyšetřování polohy přímky}
+V této úloze většinou dostanete kuželosečky v obecném tvaru a lineární funkci. Stačí si vyjádřit
+jednu neznámou a následně ji dosadit do obecné rovnice kuželosečky. Pokud výsledná rovnice nemá
+řešení, jde o vnější přímku. Pokud má jedno řešení, jde o tečnu a pokud má dvě řešení, jde o sečnu.
+
+Při této úloze když vyšetřujeme paraboly a hyperboly tak si musíme dát pozor, jestli nám nevznikne
+jednobodová sečna. To zjistíme tím, že pokud dosadíme jednu neznámou a vznikne nám místo kvadratické
+linearní rovnice.
+\subsubsection*{Hledání tečny}
+Někdy místo určení tečny která prochází nějakým bodem se chce určení tečny, která je rovnoběžná nebo
+kolmá na nějakou přímku. Dejme tomu že máme přímku $Ay + Bx + C = 0$. Pokud hledáme tečnu která je
+rovnoběžná, bude mít předpis $Ay + Bx + K = 0$. Pokud hledáme tečnu která je kolmá, bude mít předpis
+$By - Ax + K = 0$. Dále zase dosadíme přímku do kuželosečky. Následně chceme najít neznámou $K$,
+která po nám po dosazení da diskriminant roven nule.
 \end{document}
 
