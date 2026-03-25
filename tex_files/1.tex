@@ -9,6 +9,7 @@
 \usepackage{caption}
 \usepackage{hyperref}
 \usepackage{dsfont}
+\usepackage{color}
 
 % matematicke package
 \usepackage{amsmath}
@@ -18,14 +19,13 @@
 \geometry{margin=2.5cm}
 \usepackage{pgfplots}
 \pgfplotsset{compat=1.18}
-\setcounter{secnumdepth}{0}
 \title{Maturitní otázka číslo 1: Logická výstavba matematiky}
 \author{}
 \date{}
 
 \begin{document}
 \maketitle
-\subsection{Základní pojmy}
+\subsection*{Základní pojmy}
 \textbf{Axiom} je základní tvrzení, jehož pravdivost se nedokazuje a stavíme na ní dále daný důkaz
 \textbf{Věta} je tvrzení, jehož pravdivost je potřeba ověřit
 \textbf{Výrok} je věta u které má smysl ověřit, jestli je pravdivá. Výroky jsou oznamovací věty, nebo matematická tvrzení, například:
@@ -61,26 +61,26 @@ $A$ & $B$ & $\neg A$ & $A \land B$ & $A \lor B$ & $A \Rightarrow B$ & $A \Leftri
 \end{table}
 \textbf{Obměněná implikace} je $\neg A \Rightarrow \neg B$ a má stejnou pravdivostní hodnotu jako původní implikace\\
 \textbf{Obrácená implikace} je $B \Rightarrow A$ a nemá stejnou pravdivostní hodnotu jako původní implikace\\
-\subsection{Kvantiﬁkátory}
+\subsection*{Kvantiﬁkátory}
 \textbf{Existenční kvantifikátor} se značí $\exists$ a znamená existuje alespoň jeden\\
 \textbf{Obecný kvantifikátor} se značí $\forall$ a znamená pro každé
 Tyto kvantifikátory se vzájemně negují, například $\neg \exists x P(x)$ je ekvivalentní s $\forall x \neg P(x)$ a $\neg \forall x P(x)$ je ekvivalentní s $\exists x \neg P(x)$
 
-\subsection{Základní věty}
+\subsection*{Základní věty}
 \textbf{Základní věta aritmetiky} tvrdí, že každé přirozené číslo větší než 1 je buď prvočíslem, nebo jej lze jednoznačně rozložit na součin prvočísel\\
-\href{https://www.matweb.cz/zakladni-veta-aritmetiky/?value0=100&unit0=&outputUnit=}{Důkaz} - musíme ho alespoň naznačit u zkoušení
+\href{https://www.matweb.cz/zakladni-veta-aritmetiky/?value0=100&unit0=&outputUnit=}{\color{blue}Důkaz} - musíme ho alespoň naznačit u zkoušení
 
 \textbf{Základní věta algebry} tvrdí, že každý polynom n-tého stupně má n kořenů (některé mohou být dvojné)\\
 Úplné znění je: každý nekonstantní polynom s komplexními koeficienty má alespoň jeden komplexní kořen.\\
 
-\subsection{Číselné soustavy}
+\subsection*{Číselné soustavy}
 Číselné soustavy jsou charakterizovány základem, který je v případě desítkové soustavy deset a podle pozice tohoto čísla v zápisu je určna jeho mocnina. Na prvním místě je $10^0$, na druhém $10^1$ atd.\\
 Po rozepsání čísla 110 do těch mocnin dostaneme $1 \cdot 10^2 + 1 \cdot 10^1 + 0 \cdot 10^0$\\ 
 Pro převedení tohoto čísla do dvojkové soustavy musíme zjistit, kolik je největší mocnina dvojky, která se do 110 vejde. Je to $2^6 = 64$. \\
 A pak pokračujeme dál, až vyjde $110 = 1 \cdot 2^6 + 1 \cdot 2^5 + 0 \cdot 2^4 + 1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 0 \cdot 2^0$\\
 \textbf{Potřeba upravit, tahle metoda stojí zahovno}
 
-\subsection{Kritéria dělitelnosti}
+\subsection*{Kritéria dělitelnosti}
 \begin{table}[h]
 \centering
 \renewcommand{\arraystretch}{1.3} % Zvětší řádkování pro lepší čitelnost
@@ -111,8 +111,8 @@ A pak pokračujeme dál, až vyjde $110 = 1 \cdot 2^6 + 1 \cdot 2^5 + 0 \cdot 2^
 \label{tab:delitelnost}
 \end{table}
 
-\subsection{Důkazy matematických vět}
-\subsubsection{Důkazy prostých výroků}
+\subsection*{Důkazy matematických vět}
+\subsubsection*{Důkazy prostých výroků}
 \textbf{Důkaz přímý} - předpokládáme pravdivost výroku A a na základě řetězce pravdivých implikacídokážeme pravdivost výroku B\\
 Nejprve je potřeba příprava důkazu, v příkladu si dokážeme AG nerovnost $$\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}\geq \sqrt{x\cdot y}$$\\
 $$\Rightarrow x+y \geq 2\sqrt{x\cdot y}$$
