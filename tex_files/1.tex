@@ -8,6 +8,7 @@
 \usepackage{graphics}
 \usepackage{caption}
 \usepackage{hyperref}
+\usepackage{dsfont}
 
 % matematicke package
 \usepackage{amsmath}
@@ -34,11 +35,93 @@
 - $4 + 4 = 5$
 
 \textbf{Výroková forma} je výraz, který obsahuje jednu či více proměnných a není výrokem, dokud za ně nedosadíme. Výroková forma je například $4 + x = 8$
-\subsection{Logické spojky}
-\textbf{Konjunkce} se značí $\wedge$ a v češtině znamená a/a zároveň.\\
-\textbf{Disjunkce} se značí $\vee$ a znamená nebo\\
-\textbf{Implikace} se značí $A \rightarrow B$, výrok A se nayývá předpoklad a výrok B se nazývá závěr (jestliže A, pak B)\\
-\textbf{Ekvivalence} se značí $A \leftrightarrow B$, znamená A je ekvivalentní s B\\
+
+\textbf{Tautologie} je výrok, který je pravdivý pro všechny možné hodnoty proměnných, například $A \lor \neg A$\\
+\textbf{Kontradikce} je výrok, který je nepravdivý pro všechny možné hodnoty proměnných, například $A \land \neg A$\\
+\textbf{Prvočíslo} je číslo, které má pouze dva dělitele, a to 1 a sebe sama. Naproti tomu \textbf{Složené číslo} má více než dva dělitele.
+\textbf{Konjunkce} se značí $A \land B$ a v češtině znamená a/a zároveň.\\
+\textbf{Disjunkce} se značí $A \lor B$ a znamená nebo\\
+\textbf{Implikace} se značí $A \Rightarrow B$, výrok A se nayývá předpoklad a výrok B se nazývá závěr (jestliže A, pak B)\\
+\textbf{Ekvivalence} se značí $A \Leftrightarrow B$, znamená A je ekvivalentní s B\\
+
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+$A$ & $B$ & $\neg A$ & $A \land B$ & $A \lor B$ & $A \Rightarrow B$ & $A \Leftrightarrow B$ \\
+\hline
+1 & 1 & 0 & 1 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+\hline
+\end{tabular}
+\caption{Pravdivostní hodnoty logických spojek}
+\end{table}
+\textbf{Obměněná implikace} je $\neg A \Rightarrow \neg B$ a má stejnou pravdivostní hodnotu jako původní implikace\\
+\textbf{Obrácená implikace} je $B \Rightarrow A$ a nemá stejnou pravdivostní hodnotu jako původní implikace\\
+\subsection{Kvantiﬁkátory}
+\textbf{Existenční kvantifikátor} se značí $\exists$ a znamená existuje alespoň jeden\\
+\textbf{Obecný kvantifikátor} se značí $\forall$ a znamená pro každé
+Tyto kvantifikátory se vzájemně negují, například $\neg \exists x P(x)$ je ekvivalentní s $\forall x \neg P(x)$ a $\neg \forall x P(x)$ je ekvivalentní s $\exists x \neg P(x)$
+
+\subsection{Základní věty}
+\textbf{Základní věta aritmetiky} tvrdí, že každé přirozené číslo větší než 1 je buď prvočíslem, nebo jej lze jednoznačně rozložit na součin prvočísel\\
+\href{https://www.matweb.cz/zakladni-veta-aritmetiky/?value0=100&unit0=&outputUnit=}{Důkaz} - musíme ho alespoň naznačit u zkoušení
+
+\textbf{Základní věta algebry} tvrdí, že každý polynom n-tého stupně má n kořenů (některé mohou být dvojné)\\
+Úplné znění je: každý nekonstantní polynom s komplexními koeficienty má alespoň jeden komplexní kořen.\\
+
+\subsection{Číselné soustavy}
+Číselné soustavy jsou charakterizovány základem, který je v případě desítkové soustavy deset a podle pozice tohoto čísla v zápisu je určna jeho mocnina. Na prvním místě je $10^0$, na druhém $10^1$ atd.\\
+Po rozepsání čísla 110 do těch mocnin dostaneme $1 \cdot 10^2 + 1 \cdot 10^1 + 0 \cdot 10^0$\\ 
+Pro převedení tohoto čísla do dvojkové soustavy musíme zjistit, kolik je největší mocnina dvojky, která se do 110 vejde. Je to $2^6 = 64$. \\
+A pak pokračujeme dál, až vyjde $110 = 1 \cdot 2^6 + 1 \cdot 2^5 + 0 \cdot 2^4 + 1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 0 \cdot 2^0$\\
+\textbf{Potřeba upravit, tahle metoda stojí zahovno}
+
+\subsection{Kritéria dělitelnosti}
+\begin{table}[h]
+\centering
+\renewcommand{\arraystretch}{1.3} % Zvětší řádkování pro lepší čitelnost
+\begin{tabular}{|c|p{8cm}|l|}
+\hline
+\textbf{Číslo} & \textbf{Pravidlo dělitelnosti} & \textbf{Příklad} \\
+\hline
+\textbf{2} & Poslední číslice je sudá (0, 2, 4, 6, 8). & 12\textbf{8} \\
+\hline
+\textbf{3} & Ciferný součet je dělitelný 3. & 144 ($1+4+4=9$) \\
+\hline
+\textbf{4} & Poslední dvojčíslí tvoří číslo dělitelné 4. & 5\textbf{16} (16 je dělitelné 4) \\
+\hline
+\textbf{5} & Poslední číslice je 0 nebo 5. & 8\textbf{5} \\
+\hline
+\textbf{6} & Číslo je dělitelné 2 i 3 zároveň. & 114 (sudé, $1+1+4=6$) \\
+\hline
+\textbf{7} & Dvojnásobek poslední číslice odečtený od zbytku čísla je dělitelný 7. & 343 ($34 - 2 \cdot 3 = 28$) \\
+\hline
+\textbf{8} & Poslední trojčíslí tvoří číslo dělitelné 8. & 1\textbf{048} (048 je dělitelné 8) \\
+\hline
+\textbf{9} & Ciferný součet je dělitelný 9. & 729 ($7+2+9=18$) \\
+\hline
+\textbf{11} & Rozdíl součtů číslic na sudých a lichých pozicích je roven 0 nebo dělitelný 11. & 2849 ($8+9=17, 2+4=6; 17-6=11$) \\
+\hline
+\end{tabular}
+\caption{Pravidla dělitelnosti čísel 1 až 11}
+\label{tab:delitelnost}
+\end{table}
+
+\subsection{Důkazy matematických vět}
+\subsubsection{Důkazy prostých výroků}
+\textbf{Důkaz přímý} - předpokládáme pravdivost výroku A a na základě řetězce pravdivých implikacídokážeme pravdivost výroku B\\
+Nejprve je potřeba příprava důkazu, v příkladu si dokážeme AG nerovnost $$\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}\geq \sqrt{x\cdot y}$$\\
+$$\Rightarrow x+y \geq 2\sqrt{x\cdot y}$$
+$$\Rightarrow x^2 + 2xy + y^2 \geq 4xy$$
+$$\Rightarrow x^2 - 2xy + y^2 \geq 0$$
+$$\Rightarrow (x-y)^2 \geq 0$$
+Tento výraz je vždy pravdivý, protože druhý mocnina je vždy nezáporná. Teď je ještě potřeba dokázat tento důkaz, což probíhá tím, že naše tvrzení $(x-y)^2 \geq 0$ upravíme zpět na původní výraz.\\
+
+\textbf{Důkaz sporem} je negace výroku, který chceme dokázat a pomocí pravdivých implikací dojdeme k tvrzení, které je nepravdivé.(spor)
 
 
 
