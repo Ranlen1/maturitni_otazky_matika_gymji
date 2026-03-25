@@ -125,17 +125,47 @@ a je délka hlavní osy.
 
 U středové rovnice elipsy se středem $S[m, n]$ závisí na poloze hlavní osy. Pokud je hlavní osa
 rovnoběžná s osou x, rovnice je ve tvaru $\frac{(x - m)^2}{a^2} + \frac{(y - n)^2}{b^2} = 1$, pokud
-je hlavní osa rovnoběžná s osou y, rovnice je ve tvaru $\frac{(x - m)^2}{b^2} + \frac{(y - n)^2}{a^2}
+je hlavní osa rovnoběžná s osou y, rovnice je ve tvaru
+
+$\frac{(x - m)^2}{b^2} + \frac{(y - n)^2}{a^2}
 = 1$.
 
 Obecná rovnice elipsy je $Ax^2 + Cy^2 + Dx + Ey + F = 0$. Od kružnice se liší tím, že koeficienty
 A a C nejsou stejné.
 
-Polohy elipsy a přímky fungují stejně jako u kružnice. Důležitý rozdíl je tečny, protože přímka
+Polohy elipsy a přímky fungují stejně jako u kružnice. Důležitý rozdíl je u tečny, protože přímka
 procházejícím jak středem tak bodem dotyku nemusí být kolmá na tečnu.
 
 Pro elipsu s rovnicí $\frac{(x - m)^2}{a^2} + \frac{(y - n)^2}{b^2} = 1$ a bodem $X[x_0, y_0]$je
 rovnicí tečny $\frac{(x_0 - m)(x - m)}{a^2} + \frac{(y_0 - n)(y - n}{b^2} = 1$. Pokud by byla hlavní
-osa rovnoběžná s osou y, ve vzorečku se jen prohodí jmenovatele.
+osa rovnoběžná s osou y, ve vzorečku se prohodí jmenovatele. $\frac{(x_0 - m)(x - m)}{b^2} +
+\frac{(y_0 - n)(y - n}{a^2} = 1$
 
+\subsection*{Parabola}
+Parabola je množina všech bodů $X$ v rovině, které mají od bodu $F$ a přímky $q$, která jím
+neprochází, stejnou vzdálenost. Bod $F$ se nazývá ohnisko a přímka $q$ řídící přímka.
+Ohniskem a vrcholem paraboly prochází osa paraboly, která je kolmá na řídící přímku. Vzdálenost
+ohniska a řídící přímky se nazývá parametr paraboly.
+
+\begin{figure}[h] 
+    \centering    
+    \includegraphics[width=1.0\linewidth]{pictures/parabola.png}
+    \caption*{Nákres paraboly}
+\end{figure}
+
+U vrcholové rovnice s vrcholem $V[m, n$ a parametrem $p$ záleží na tvaru paraboly. Pokud je osa
+paraboly rovnoběžná s osu $y$ a rozevírá se směrem ke kladnému y, rovnice je $(x - m)^2 = 2p(y - n)$.
+Pokud se rozevírá směrem k zápornému y, rovnice je $(x - m)^2 = -2p(y - n)$. Když je osa paraboly
+rovnoběžná s osou x a rozevírá se směrem ke kladnému x, rovnice je $(y - n)^2 =2 p(x - m)$. Když se
+parabola rozevírá směrem k zápornému x, rovnice je z $(y - n)^2 = -2p(x - m)$.
+
+Tvar obecné rovnice se odvýjí od tvaru paraboly. Pokud je osa paraboly rovnoběžná s osou y, rovnice
+je $y = ax^2 + bx + c$. Pokud je osa paraboly rovnoběžná s osou x, rovnice je $x = ay^2 + by + c$.
+
+Sečna a tečna jsou definovány stejně, tedy že má dva a jeden průsečík. U rovnice tečny paraboly v
+bodě $T[x_0, y_0]$ zase záleží na tvaru paraboly. Parabola daná rovnicí $(x - m)^2 = \pm(y - n)$ má
+rovnici $(x_0 - m)(x - m) = \pm p(y_0 - n) \pm p(y - n)$. Parabola daná rovnicí $(y-n)^2 = \pm 
+2p(x - m)$ má rovnici $(y_0 - n)(y - n) = \pm p(x_0 - m) \pm p(x - m)$. Znaménka v druhé rovnici
+kopírují znaménka v první rovnici.
 \end{document}
+
