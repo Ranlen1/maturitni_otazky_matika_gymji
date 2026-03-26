@@ -114,46 +114,48 @@ A pak pokračujeme dál, až vyjde $110 = 1 \cdot 2^6 + 1 \cdot 2^5 + 0 \cdot 2^
 \subsection*{Důkazy matematických vět}
 \subsubsection*{Důkazy prostých výroků}
 \textbf{Důkaz přímý} - předpokládáme pravdivost výroku A a na základě řetězce pravdivých implikacídokážeme pravdivost výroku B\\
-Nejprve je potřeba příprava důkazu, v příkladu si dokážeme AG nerovnost $$\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}\geq \sqrt{x\cdot y}$$\\
-$$\Rightarrow x+y \geq 2\sqrt{x\cdot y}$$
-$$\Rightarrow x^2 + 2xy + y^2 \geq 4xy$$
-$$\Rightarrow x^2 - 2xy + y^2 \geq 0$$
-$$\Rightarrow (x-y)^2 \geq 0$$
+Nejprve je potřeba příprava důkazu, v příkladu si dokážeme AG nerovnost \[\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}\geq \sqrt{x\cdot y}\]\\
+
+\[\Rightarrow x+y \geq 2\sqrt{x\cdot y}\]
+\[\Rightarrow x^2 + 2xy + y^2 \geq 4xy\]
+\[\Rightarrow x^2 - 2xy + y^2 \geq 0\]
+\[\Rightarrow (x-y)^2 \geq 0\] 
+
 Tento výraz je vždy pravdivý, protože druhý mocnina je vždy nezáporná. Teď je ještě potřeba dokázat tento důkaz, což probíhá tím, že naše tvrzení $(x-y)^2 \geq 0$ upravíme zpět na původní výraz.\\
 
 \textbf{Důkaz sporem} je negace výroku, který chceme dokázat a pomocí pravdivých implikací dojdeme k tvrzení, které je nepravdivé.(spor)
 
-$$\neg(\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}\geq \sqrt{x\cdot y}) = \exists x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}<2\cdot \sqrt{x\cdot y}$$\\
+\[\neg(\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}\geq \sqrt{x\cdot y}) = \exists x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}<2\cdot \sqrt{x\cdot y}\]\\
 A teď znegovaný výrok upravujeme, dokud nedojdeme k nepravdivému trvzení.
-$$\Rightarrow x+y < 2\cdot \sqrt{x\cdot y}$$
-$$\Rightarrow x^2 + 2xy + y^2 < 4xy$$
-$$\Rightarrow x^2 - 2xy + y^2 < 0$$
-$$\Rightarrow (x-y)^2 < 0$$
+\[\Rightarrow x+y < 2\cdot \sqrt{x\cdot y}\]
+\[\Rightarrow x^2 + 2xy + y^2 < 4xy\]
+\[\Rightarrow x^2 - 2xy + y^2 < 0\]
+\[\Rightarrow (x-y)^2 < 0\]
 Toto tvrzení je nepravdivé, protože druhá mocnina je vždy nezáporná, což je spor, a proto je původní tvrzení pravdivé.
 \subsubsection*{Důkazy implikace}
 \textbf{Přímý důkaz} se může provést přímým důkazem, nepřímým, nebo sporem.
 nejprve začnu přímým důkazem implikace, ten stejně jako u přímého důkazu prostých výroků předpokládá pravdivost výroku A a na základě řetězce pravdivých implikací dokáže pravdivost výroku B.\\
-Nejprve je potřeba příprava důkazu, v příkladu si dokážeme větu $$\forall x,y \in \mathbb{N}: 2|n \Rightarrow 2|n^2$$
-$$\Rightarrow 2|n \Rightarrow \exists k \in \mathbb{N}: n = 2k$$
-$$\Rightarrow n^2 = (2k)^2$$
-$$\Rightarrow n^2 = 4k^2$$
-$$\Rightarrow n^2 = 2(2k^2)$$
-$$\Rightarrow \exists l \in \mathbb{N} \land l = 2k^2: n^2 = 2l$$
-$$\Rightarrow 2|n^2$$
+Nejprve je potřeba příprava důkazu, v příkladu si dokážeme větu \[\forall x,y \in \mathbb{N}: 2|n \Rightarrow 2|n^2\]
+\[\Rightarrow 2|n \Rightarrow \exists k \in \mathbb{N}: n = 2k\]
+\[\Rightarrow n^2 = (2k)^2\]
+\[\Rightarrow n^2 = 4k^2\]
+\[\Rightarrow n^2 = 2(2k^2)\]
+\[\Rightarrow \exists l \in \mathbb{N} \land l = 2k^2: n^2 = 2l\]
+\[\Rightarrow 2|n^2\]
 Dokázali jsme, že $n^2$ musí být násobek dvou a tudíž je dělitelné dvěmi.
 
 \textbf{Důkaz sporem}
 Nejprve znegujeme implikaci, kterou chceme dokázat, a pak pomocí pravdivých implikací dojdeme k tvrzení, které je nepravdivé (spor).\\
-Negace věty $$\neg(\forall x,y \in \mathbb{N}: 2|n \Rightarrow 2|n^2) = \exists x,y \in \mathbb{N}: 2|n \land \neg(2|n^2)$$\\
+Negace věty \[\neg(\forall x,y \in \mathbb{N}: 2|n \Rightarrow 2|n^2) = \exists x,y \in \mathbb{N}: 2|n \land \neg(2|n^2)\]\\
 A teď znegovaný výrok upravujeme, dokud nedojdeme k nepravdivému trvzení.
-$$\Rightarrow \exists n \in \mathbb{N}: n = 2k$$
-$$2|n \Rightarrow n^2 = 4k^2 = 2\cdot 2k^2$$
-$$\Rightarrow \exists l \in \mathbb{N} \land l = 2k^2: n^2 = 2l$$
-$$\Rightarrow 2|n^2$$
+\[\Rightarrow \exists n \in \mathbb{N}: n = 2k\]
+\[2|n \Rightarrow n^2 = 4k^2 = 2\cdot 2k^2\]
+\[\Rightarrow \exists l \in \mathbb{N} \land l = 2k^2: n^2 = 2l\]
+\[\Rightarrow 2|n^2\]
 Došli jsme ke sporu, což znamená, že původní věta je pravdivá.
 
 \textbf{Důkaz nepřímý}
-Je to přímý důkaz oběněné implikace, tedy dokážeme $A \Rightarrow B$ a $B \Rightarrow A$, což nám dá $A \Leftrightarrow B$.\\
+Je to přímý důkaz obměněné implikace, tedy místo $A \Rightarrow B$ dokážeme $\neg B \Rightarrow \neg A$.\\
 Používá se, pokud je výrok B jednodušší na důkaz než výrok A.\\
 
 
