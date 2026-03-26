@@ -144,8 +144,17 @@ Dokázali jsme, že $n^2$ musí být násobek dvou a tudíž je dělitelné dvě
 
 \textbf{Důkaz sporem}
 Nejprve znegujeme implikaci, kterou chceme dokázat, a pak pomocí pravdivých implikací dojdeme k tvrzení, které je nepravdivé (spor).\\
+Negace věty $$\neg(\forall x,y \in \mathbb{N}: 2|n \Rightarrow 2|n^2) = \exists x,y \in \mathbb{N}: 2|n \land \neg(2|n^2)$$\\
+A teď znegovaný výrok upravujeme, dokud nedojdeme k nepravdivému trvzení.
+$$\Rightarrow \exists n \in \mathbb{N}: n = 2k$$
+$$2|n \Rightarrow n^2 = 4k^2 = 2\cdot 2k^2$$
+$$\Rightarrow \exists l \in \mathbb{N} \land l = 2k^2: n^2 = 2l$$
+$$\Rightarrow 2|n^2$$
+Došli jsme ke sporu, což znamená, že původní věta je pravdivá.
 
-
+\textbf{Důkaz nepřímý}
+Je to přímý důkaz oběněné implikace, tedy dokážeme $A \Rightarrow B$ a $B \Rightarrow A$, což nám dá $A \Leftrightarrow B$.\\
+Používá se, pokud je výrok B jednodušší na důkaz než výrok A.\\
 
 
 \end{document}
