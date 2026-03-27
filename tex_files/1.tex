@@ -78,9 +78,14 @@ Tyto kvantifikátory se vzájemně negují, například $\neg \exists x P(x)$ je
 \subsection*{Číselné soustavy}
 Číselné soustavy jsou charakterizovány základem, který je v případě desítkové soustavy deset a podle pozice tohoto čísla v zápisu je určna jeho mocnina. Na prvním místě je $10^0$, na druhém $10^1$ atd.\\
 Po rozepsání čísla 110 do těch mocnin dostaneme $1 \cdot 10^2 + 1 \cdot 10^1 + 0 \cdot 10^0$\\ 
-Pro převedení tohoto čísla do dvojkové soustavy musíme zjistit, kolik je největší mocnina dvojky, která se do 110 vejde. Je to $2^6 = 64$. \\
-A pak pokračujeme dál, až vyjde $110 = 1 \cdot 2^6 + 1 \cdot 2^5 + 0 \cdot 2^4 + 1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 0 \cdot 2^0$\\
-\textbf{Potřeba upravit, tahle metoda stojí zahovno}
+Převáděné číslo vydělíme základem požadované soustavy, zapíšeme si zbytek a výsledek dělení znovu dělíme základem požadované soustavy, znovu si zapíšeme zbytek a celý proces opakujeme, až dojdeme k výsledku 0. Výsledným číslem v požadované soustavě je řetězec zbytků po dělení v obráceném pořadí.\\
+Například převod čísla 110 do sedmičkové soustavy:\\
+\begin{align*}
+110 \div 7 &= 15 \quad \text{zbytek } 5\\
+15 \div 7 &= 2 \quad \text{zbytek } 1\\
+2 \div 7 &= 0 \quad \text{zbytek } 2\\
+\end{align*}
+Výsledným číslem v požadované soustavě je řetězec zbytků po dělení v obráceném pořadí: $215_7$.
 
 \subsection*{Kritéria dělitelnosti}
 \begin{table}[H]
@@ -227,7 +232,9 @@ Druhý příklad, který si dokážeme pomocí indukce je věta \[\forall n \in 
 a pomocí tohoto předpokladu dokážeme, že platí i pro $n = k + 1$
 \begin{align*}
 6\mid((k+1)^3 -3(k+1)^2 - 4(k+1))\\
-(k+1)^3 -3(k+1)^2 - 4(k+1) = k^3 + 3k^2 + 3k - 1 - 3k^2 - 6k - 1 - 4k - 4 = k^3 - 3k^2 - 4k + 3k^2 - 3k -6 = k^3 - 3k^2 - 4k + 3(k^2 - k -2) = k^3 - 3k^2 - 4k + 3(k-2)(k + 1)\\
+(k+1)^3 -3(k+1)^2 - 4(k+1) = k^3 + 3k^2 + 3k - 1 - 3k^2 - 6k - 1 - 4k - 4 =\\
+= k^3 - 3k^2 - 4k + 3k^2 - 3k -6 = k^3 - 3k^2 - 4k + 3(k^2 - k -2) = \\
+= k^3 - 3k^2 - 4k + 3(k-2)(k + 1)\\
 \end{align*}
 Z indukčního předpokladu víme, že $6\mid(k^3 -3k^2 - 4k)$, a ze zbylé části víme, že je vždy dělitelná třemi a zároveň vždy dělitelná dvěmi, protože když za k dosadíme sudé nebo liché číslo, tak vždy vyjde číslo sudé. Tudíž je celý zbytek výrazu dělitelný šesti, a tedy i celý výraz je dělitelný šesti, a tím je i indukční krok, a tedy i celá věta dokázána.
 \end{document}
