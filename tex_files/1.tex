@@ -10,9 +10,11 @@
 \usepackage{hyperref}
 \usepackage{dsfont}
 \usepackage{color}
+\usepackage{float}
 
 % matematicke package
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{geometry}
@@ -76,12 +78,17 @@ Tyto kvantifikátory se vzájemně negují, například $\neg \exists x P(x)$ je
 \subsection*{Číselné soustavy}
 Číselné soustavy jsou charakterizovány základem, který je v případě desítkové soustavy deset a podle pozice tohoto čísla v zápisu je určna jeho mocnina. Na prvním místě je $10^0$, na druhém $10^1$ atd.\\
 Po rozepsání čísla 110 do těch mocnin dostaneme $1 \cdot 10^2 + 1 \cdot 10^1 + 0 \cdot 10^0$\\ 
-Pro převedení tohoto čísla do dvojkové soustavy musíme zjistit, kolik je největší mocnina dvojky, která se do 110 vejde. Je to $2^6 = 64$. \\
-A pak pokračujeme dál, až vyjde $110 = 1 \cdot 2^6 + 1 \cdot 2^5 + 0 \cdot 2^4 + 1 \cdot 2^3 + 1 \cdot 2^2 + 0 \cdot 2^1 + 0 \cdot 2^0$\\
-\textbf{Potřeba upravit, tahle metoda stojí zahovno}
+Převáděné číslo vydělíme základem požadované soustavy, zapíšeme si zbytek a výsledek dělení znovu dělíme základem požadované soustavy, znovu si zapíšeme zbytek a celý proces opakujeme, až dojdeme k výsledku 0. Výsledným číslem v požadované soustavě je řetězec zbytků po dělení v obráceném pořadí.\\
+Například převod čísla 110 do sedmičkové soustavy:\\
+\begin{align*}
+110 \div 7 &= 15 \quad \text{zbytek } 5\\
+15 \div 7 &= 2 \quad \text{zbytek } 1\\
+2 \div 7 &= 0 \quad \text{zbytek } 2\\
+\end{align*}
+Výsledným číslem v požadované soustavě je řetězec zbytků po dělení v obráceném pořadí: $215_7$.
 
 \subsection*{Kritéria dělitelnosti}
-\begin{table}[h]
+\begin{table}[H]
 \centering
 \renewcommand{\arraystretch}{1.3} % Zvětší řádkování pro lepší čitelnost
 \begin{tabular}{|c|p{8cm}|l|}
@@ -113,16 +120,121 @@ A pak pokračujeme dál, až vyjde $110 = 1 \cdot 2^6 + 1 \cdot 2^5 + 0 \cdot 2^
 
 \subsection*{Důkazy matematických vět}
 \subsubsection*{Důkazy prostých výroků}
-\textbf{Důkaz přímý} - předpokládáme pravdivost výroku A a na základě řetězce pravdivých implikacídokážeme pravdivost výroku B\\
-Nejprve je potřeba příprava důkazu, v příkladu si dokážeme AG nerovnost $$\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}\geq \sqrt{x\cdot y}$$\\
-$$\Rightarrow x+y \geq 2\sqrt{x\cdot y}$$
-$$\Rightarrow x^2 + 2xy + y^2 \geq 4xy$$
-$$\Rightarrow x^2 - 2xy + y^2 \geq 0$$
-$$\Rightarrow (x-y)^2 \geq 0$$
+\textbf{Důkaz přímý} - předpokládáme pravdivost výroku A a na základě řetězce pravdivých implikací dokážeme pravdivost výroku B\\
+Nejprve je potřeba příprava důkazu, v příkladu si dokážeme AG nerovnost 
+\begin{align*}
+\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}&\geq \sqrt{x\cdot y}\\
+\Rightarrow x+y &\geq 2\sqrt{x\cdot y}\\
+\Rightarrow x^2 + 2xy + y^2 &\geq 4xy\\
+\Rightarrow x^2 - 2xy + y^2 &\geq 0\\
+\Rightarrow (x-y)^2 &\geq 0\\ 
+\end{align*}
+
 Tento výraz je vždy pravdivý, protože druhý mocnina je vždy nezáporná. Teď je ještě potřeba dokázat tento důkaz, což probíhá tím, že naše tvrzení $(x-y)^2 \geq 0$ upravíme zpět na původní výraz.\\
 
 \textbf{Důkaz sporem} je negace výroku, který chceme dokázat a pomocí pravdivých implikací dojdeme k tvrzení, které je nepravdivé.(spor)
 
+\[\neg(\forall x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}\geq \sqrt{x\cdot y}) = \exists x,y \in \mathbb{R}_0^+ : \frac{x+y}{2}<2\cdot \sqrt{x\cdot y}\]\\
+A teď znegovaný výrok upravujeme, dokud nedojdeme k nepravdivému trvzení.
+\begin{align*}
+\Rightarrow x+y &< 2\cdot \sqrt{x\cdot y}\\
+\Rightarrow x^2 + 2xy + y^2 &< 4xy\\
+\Rightarrow x^2 - 2xy + y^2 &< 0\\
+\Rightarrow (x-y)^2 &< 0\\
+\end{align*}
+Toto tvrzení je nepravdivé, protože druhá mocnina je vždy nezáporná, což je spor, a proto je původní tvrzení pravdivé.
+\subsubsection*{Důkazy implikace}
+\textbf{Přímý důkaz} se může provést přímým důkazem, nepřímým, nebo sporem.
+nejprve začnu přímým důkazem implikace, ten stejně jako u přímého důkazu prostých výroků předpokládá pravdivost výroku A a na základě řetězce pravdivých implikací dokáže pravdivost výroku B.\\
+Nejprve je potřeba příprava důkazu, v příkladu si dokážeme větu:
+\begin{align*}
+\forall x,y \in \mathbb{N}: 2|n &\Rightarrow 2|n^2\\
+\Rightarrow 2|n \Rightarrow \exists k \in \mathbb{N}: n &= 2k\\
+\Rightarrow n^2 &= (2k)^2\\
+\Rightarrow n^2 &= 4k^2\\
+\Rightarrow n^2 &= 2(2k^2)\\
+\Rightarrow \exists l \in \mathbb{N} \land l &= 2k^2: n^2 = 2l\\
+\Rightarrow 2|n^2\\
+\end{align*}
+Dokázali jsme, že $n^2$ musí být násobek dvou a tudíž je dělitelné dvěmi.
 
+\textbf{Důkaz sporem}
+Nejprve znegujeme implikaci, kterou chceme dokázat, a pak pomocí pravdivých implikací dojdeme k tvrzení, které je nepravdivé (spor).\\
+Negace věty \[\neg(\forall x,y \in \mathbb{N}: 2|n \Rightarrow 2|n^2) = \exists x,y \in \mathbb{N}: 2|n \land \neg(2|n^2)\]\\
+A teď znegovaný výrok upravujeme, dokud nedojdeme k nepravdivému trvzení.
+\[\Rightarrow \exists n \in \mathbb{N}: n = 2k\]
+\[2|n \Rightarrow n^2 = 4k^2 = 2\cdot 2k^2\]
+\[\Rightarrow \exists l \in \mathbb{N} \land l = 2k^2: n^2 = 2l\]
+\[\Rightarrow 2|n^2\]
+Došli jsme ke sporu, což znamená, že původní věta je pravdivá.
 
+\textbf{Důkaz nepřímý}
+Je to přímý důkaz obměněné implikace, tedy místo $A \Rightarrow B$ dokážeme $\neg B \Rightarrow \neg A$.\\
+Používá se, pokud je výrok B jednodušší na důkaz než výrok A.\\
+Jako příklad si dokážeme větu \[\forall(n\in \mathbb{N}): 5|(n^2+1) \Rightarrow 5\nmid n\]
+Nejprve si implikaci převedem na obměněnou implikaci, tedy \[\exists(n\in \mathbb{N}): 5 \mid n \Rightarrow 5\nmid (n^2+1)\]
+A teď už jen dokážeme tuto implikaci přímým důkazem.
+\[\Rightarrow \exists k \in \mathbb{N}: n = 5k\]
+\[\Rightarrow n^2 + 1 = (5k)^2 + 1\]
+\[\Rightarrow n^2 + 1 = 25k^2 + 1\]
+\[\Rightarrow n^2 + 1 = 5(5k^2) + 1\]
+\[\Rightarrow \exists r \in \mathbb{N}: r = 5k^2\]
+\[\Rightarrow 5(5k^2) + 1 = 5r + 1\]
+\[\Rightarrow 5 \nmid (n^2 + 1)\]
+Tím jsme dokázali obměněnou implikaci a tedy i původní implikaci.
+
+\textbf{Důkaz ekvivalence}
+Důkaz ekvivalence se provádí důkazem obou implikací, tedy $A \Rightarrow B$ a $B \Rightarrow A$.\\
+Jako příklad si dokážeme větu \[\forall n \in \mathbb{N}: 2|n \Leftrightarrow 2|n^2\]
+Tuto větu si rozdělíme do dvou implikací, tedy \[\forall n \in \mathbb{N}: 2|n \Rightarrow 2|n^2\] a \[\forall n \in \mathbb{N}: 2|n^2 \Rightarrow 2|n\]
+První větu jsem už dokázali výše, takže teď dokážu jen druhou implikaci. Nejjednodušší způsob je důkaz pomocí obměněné implikace, tedy dokážeme \[2\nmid n \Rightarrow 2\nmid n^2\]
+\[\Rightarrow \exists k \in \mathbb{N}: n = 2k + 1\]
+\[\Rightarrow n^2 = (2k + 1)^2\]
+\[\Rightarrow n^2 = 4k^2 + 4k + 1\]
+\[\Rightarrow n^2 = 2(2k^2 + 2k) + 1\]
+\[\Rightarrow \exists r \in \mathbb{N}: r = 2k^2 + 2k\]
+\[\Rightarrow n^2 = 2r + 1\]
+\[\Rightarrow 2 \nmid n^2\]
+Tím jsme dokázali obměněnou implikaci a tedy i původní implikaci, a tím i ekvivalenci.
+
+\subsection*{Důkaz rovnosti A = B}
+Důkaz rovnosti A = B se provádí buď pomocí samostatné úpravy jednoho z výrazů A nebo B, pokud je jeden z nich výrazně jednodušší. Pokud jsou oba výrazy složité, tak upravujeme oba dokud nedojdeme ke stejnému výrazu. \textbf{Nedokazujeme to jako rovnici, ale zvlášť jako pravou a levou stranu}
+Jak to funguje si ukážeme na důkazu sudosti funkce. Věta o sudosti funkce zní následovně: \[x\in D_f \Rightarrow (-x\in D_f \land f(-x) = f(x))\]
+Funkce na které to budu dokazovat je $f(x) = x^4$.
+\begin{align*}
+L &= f(-x) = (-x)^4 = x^4\\
+P &= f(x) = x^4\\
+L &= P\\
+\end{align*}
+Tímto jsme dokázali, že $L = P$, tedy $f(-x) = f(x)$.
+
+\subsection*{Důkaz matematickou indukcí}
+Matematická indukce se používá pro důkaz tvrzení, které platí pro všechna přirozená čísla. Skládá se ze dvou kroků, a to z báze a indukčního kroku. Pokud se projdou jen konkrétní případy, nazývá se to \textbf{neúplná indukce}, pokud jsou zkontrolovány případy všechny, nazývá se to \textbf{úplná indukce}, speciální typ úplné indukce je matematická indukce. Tento typ důkazu fuguje, díky tomu, že přirozená čísla jsou uspořádaná množina, tedy existuje nejmenší prvek a každé přirozené číslo má jednoznačně určeného následovníka\\
+Tento typ důkazu se skládá ze dvou kroků, a to z (báze, Pazi to neříkal, říká to chat) a z indukčního kroku.\\
+\textbf{1. krok}: dokážeme, že tvrzení platí pro nejmenší prvek množiny, tedy pro $n = 1$\\
+\textbf{2. krok}: nazývá se \textbf{indukční krok} a dokážeme, že pokud tvrzení platí pro nějaké $n = k$, tak musí platit i pro $n = k + 1$\\
+Jako příklad si dokážeme, větu \[\forall n \in \mathbb{N}:1 + 3 + 5 + \dots + (2n-1) = n^2\]
+\textbf{1. krok}: pro $n = 1$ platí, že $1 = 1^2$, tedy báze je dokázána\\
+\textbf{2. krok}: předpokládáme, že tvrzení platí pro $n = k$, tedy $1 + 3 + 5 + \dots + (2k-1) = k^2$, tomu se říká \textbf{indukční předpoklad} a pomocí tohoto předpokladu dokážeme, že platí i pro $n = k + 1$
+
+\[1 + 3 + 5 + \dots + (2k-1) + (2(k+1)-1) = (k+1)^2\]
+z indukčního předpokladu víme, že $1 + 3 + 5 + \dots + (2k-1) = k^2$, tedy můžeme dosadit za první část výrazu $k^2$, a dostaneme:
+\begin{align*}
+L = k^2 + 2k + 1\\
+P = k^2 + 2k + 1\\
+L = P\\
+\end{align*}
+Tím jsme dokázali, že $L = P$, tedy $1 + 3 + 5 + \dots + (2(k+1)-1) = (k+1)^2$, a tím i indukční krok, a tedy i celou větu.\\
+
+Druhý příklad, který si dokážeme pomocí indukce je věta \[\forall n \in \mathbb{N}: 6\mid(n^3 -3n^2 - 4n)\]
+\textbf{1. krok}: pro $n = 1$ platí, že $(1^3 -3\cdot 1^2 - 4\cdot 1 = -6)$, tedy báze je dokázána\\
+\textbf{2. krok}: předpokládáme, že tvrzení platí pro $n = k$, tedy $6\mid(k^3 -3k^2 - 4k)$
+a pomocí tohoto předpokladu dokážeme, že platí i pro $n = k + 1$
+\begin{align*}
+6\mid((k+1)^3 -3(k+1)^2 - 4(k+1))\\
+(k+1)^3 -3(k+1)^2 - 4(k+1) = k^3 + 3k^2 + 3k - 1 - 3k^2 - 6k - 1 - 4k - 4 =\\
+= k^3 - 3k^2 - 4k + 3k^2 - 3k -6 = k^3 - 3k^2 - 4k + 3(k^2 - k -2) = \\
+= k^3 - 3k^2 - 4k + 3(k-2)(k + 1)\\
+\end{align*}
+Z indukčního předpokladu víme, že $6\mid(k^3 -3k^2 - 4k)$, a ze zbylé části víme, že je vždy dělitelná třemi a zároveň vždy dělitelná dvěmi, protože když za k dosadíme sudé nebo liché číslo, tak vždy vyjde číslo sudé. Tudíž je celý zbytek výrazu dělitelný šesti, a tedy i celý výraz je dělitelný šesti, a tím je i indukční krok, a tedy i celá věta dokázána.
 \end{document}
