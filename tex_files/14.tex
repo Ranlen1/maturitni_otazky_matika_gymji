@@ -83,10 +83,10 @@ Soudružný bod existuje v bodu otáčení a nebo je tvoří celá rovina, pokud
 360^\circ, k \in \mathbb{Z}$ a nebo pokud přímka prochází středem otáčení a $\alpha = 180^\circ + k
 \cdot 360^\circ, k \in \mathbb{Z}$.
 \subsubsection*{Osová souměrnost}
-Osová souměrnost $O(o)$ s osou $o$ je zobrazení, ve kterém se zobrazí každý bod $X$ na ose $o$ na bod
-$X' = X$ a každý bod $X$ který neleží na ose na bod $X'$ tak, že úsečka $XX'$ je kolmá na osu a střed
-$S$ úsečky $XX'$ leží na ose. Platí tedy, že $|XS| = |SX'|$. Přímka o se nazývá osa souměrnosti.
-Osovou souměrnost s osou $o$ se zapisuje jako $O(o) : X \mapsto X'$ a udává že bod $X'$ je obrazem
+Osová souměrnost $O(o)$ určená osou $o$ je zobrazení, ve kterém se zobrazí každý bod $X$ na ose $o$
+na bod $X' = X$ a každý bod $X$ který neleží na ose na bod $X'$ tak, že úsečka $XX'$ je kolmá na osu
+a střed $S$ úsečky $XX'$ leží na ose. Platí tedy, že $|XS| = |SX'|$. Přímka o se nazývá osa souměrnost
+i. Osovou souměrnost s osou $o$ se zapisuje jako $O(o) : X \mapsto X'$ a udává že bod $X'$ je obrazem
 bodu $X$.
 
 Všechny samodružné body leží na ose souměrnosti. Samodružné přímky jsou všechny přímky kolmé na osu
@@ -96,7 +96,28 @@ Při konstrukcích se často využívá to, že jsou nějaké útvary osově sou
 například čtverec, obdélník, kružnice, kosočtverec nebo kosodélník.
 
 \subsection*{Podobná zobrazení}
-to do
-zmin ze kazda shodnost je podobne zobrazeni s koeficientem 1, ne naopak
+Zobrazení se nazývá shodené, jestliže existuje číslo $k > 0$, že pro každé dvá body $X, Y$ roviny a
+jejich orbazy $X'Y'$ platí $|X'Y'| = k \cdot |XY|$. Číslo $k$ se nazývá koeficient podobnosti. Každé
+shodné zobrazení je podobné zobrazení s koeficientem $k = 1$. Podobné útvary jsou takové, pro které
+existuje číslo $k > 0$ takové, že pro libovolnou dvojici bodů $A, B$ jednoho útvaru a odpovídající
+dvojici bodů $A'B'$ druhého útvaru platí $|A'B'| = k \cdot |AB|$.
 
+Podobnost má také dva typy a to přímou a nepřimou podobnost. Toto rozdělení funguje stejně jako
+u shodnosti. Pokud je vzor i obraz popisován stejným směrem, jde o přímou podobnost. Pokud je vzor
+a obraz popisován různými směry, jde o nepřímou podobnost. Mezi přímé podobnosti patří stejnolehlost.
+
+\subsection*{Stejnolehlost}
+Stejnolehlost $H(S, \kappa)$ určená bodem $S$ a nenulovým realným číslem $\kappa$ je zobrazení v
+rovině, ve kterém se bod $S$ zobrazí na bod $S' = S$ a každý jiný bod $X$ na bod $X'$ tak, že platí
+$|X'S| = |\kappa| \cdot |XS|$. Pro $\kappa > 0$ leží bod $X'$ na polopřímce $SX$. Pro $\kappa < 0$
+leží bod $X'$ na polopřímce opačné k polopřímce $SX$. Bod $S$ se nazývá střed stejnolehlosti a číslo
+$\kappa$ se  nazývá koeficientem stejnolehlosti. Stejnolehlost se středem stejnolehlosti $S$ a
+koeficientem stejnolehlosti $\kappa$ se zapisuje jako $H(S, \kappa) : X \mapsto X'$ a udává že bod
+$X'$ je obrazem bodu $X$.
+
+Středová souměrnost je speciálním typem stejnolehlosti s $\kappa = -1$.
+
+Samodružným bodem stejnolehlosti je střed stejnolehlosti pro $\kappa \ne 1$ nebo celá rovina
+pro $\kappa = 1$. Samoružné přímky jsou všechny přímky procházející středem stejnolehlosti pro
+$\kappa \ne -1$ nebo celá rovina pro $\kappa = -1$.
 \end{document}
