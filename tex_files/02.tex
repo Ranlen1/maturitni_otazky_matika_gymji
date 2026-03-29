@@ -81,7 +81,7 @@ Relace R nad množinami A a B je libovolná podmnožina kartézského součinu $
 
 \subsubsection*{Vlastnosti relací}
 \begin{itemize}[itemsep = 2pt]
-    \item \textbf{Symetrická} je pokud je první prvke v relaci s druhým a druhý s prvním. Tedy pokud $(a, b) \in R$, pak také $(b, a) \in R$.
+    \item \textbf{Symetrická} je pokud je první prvek v relaci s druhým a druhý s prvním. Tedy pokud $(a, b) \in R$, pak také $(b, a) \in R$.
     \item \textbf{Tranzitivní} je pokud je první prvek v relaci s druhým a a druhý v relaci s třetím, pak první je v relaci s třetím. Tedy pokud $(a,b) \in R$ a $(b,c) \in R$ pak také $(a,c) \in R$. 
     \item \textbf{Reflexivní} je pokud je každý prvek v relaci sám se sebou. Tedy pro každé $a \in A$, $(a, a) \in R$.
 \end{itemize}
@@ -101,19 +101,81 @@ Zobrazení se zapisuje následovně: $f: A \rightarrow B$ a říkáme, že $f$ z
 \end{itemize}
 Existují různé typy zobrazení, které se liší podle toho jak jsou k sobě přiřazeny vzory a obrazy
 \begin{itemize}[itemsep = 2pt]
-    \item \textbf{Injekce} je zobrazení, které se také nazývá prosté zobrazení. Je charakteristické tím, že každé dva různé prvky z množiny $A$ jsou zobrazeny na různé prvky v množině $B$.
-    \item \textbf{Surjekce} je zobrazení, které se může nazývat zobrazení „na". Obor hodnot se je stejný jako množina $B$, tedy každý prvek z $B$ má alespoň jeden vzor v $A$.
-    \item \textbf{Bijekce} je zobrazení, které je vzájemně jednoznačné, tedy každému prvku z $A$ je přiřazen právě jeden prvek z $B$ a zároveň každý prvek z $B$ má právě jeden vzor v $A$. Toto zobrazení je zároveň injekcí i surjekcí a proto existuje jeho inverzí verze, která je zobrazením. Množina $A$ i $B$ musí mít stejnou mohutnost(počet prvků).
+    \item \textbf{Injekce} je zobrazení, které se také nazývá prosté zobrazení. Je charakteristické tím, že každé dva různé prvky z množiny $A$ jsou zobrazeny na různé prvky v množině $B$. Jako diagram pomocí šipek by vypadalo následovně: \\
+    
+    \begin{tikzcd}[row sep = tiny]
+        1 \arrow[rd] & 1 \\
+        2 \arrow[rd] & 2 \\
+        3 \arrow[ruu] & 3 \\
+        & 4\\
+    \end{tikzcd}
+    \item \textbf{Surjekce} je zobrazení, které se může nazývat zobrazení „na". Obor hodnot se je stejný jako množina $B$, tedy každý prvek z $B$ má alespoň jeden vzor v $A$. Přílad tohoto zobrazení by vypadal následovně:\\
+    \begin{tikzcd}[row sep = tiny]
+        1 \arrow[rd] & 1 \\
+        2 \arrow[rd] & 2 \\
+        3 \arrow[ruu] & 3 \\
+        4 \arrow[ru]\\
+    \end{tikzcd}
+    \item \textbf{Bijekce} je zobrazení, které je vzájemně jednoznačné, tedy každému prvku z $A$ je přiřazen právě jeden prvek z $B$ a zároveň každý prvek z $B$ má právě jeden vzor v $A$. Toto zobrazení je zároveň injekcí i surjekcí a proto existuje jeho inverzí verze, která je zobrazením. Množina $A$ i $B$ musí mít stejnou mohutnost(počet prvků). Jeho příklad by vypadal následovně:\\
+    \begin{tikzcd}[row sep = tiny]
+        1 \arrow[r] & 1 \\
+        2 \arrow[r] & 2 \\
+        3 \arrow[rd] & 3 \\
+        4 \arrow[ru] & 4\\
+    \end{tikzcd}
 \end{itemize}
 
-\textbf{Složené zobrazení} se značí $g \circ f$. Pokud máme zobrazení $f: A \rightarrow B$ a $g: B \rightarrow C$, pak složené zobrazení $g \circ f$ je zobrazení z množiny $A$ do množiny $C$, které přiřazuje každému prvku $x \in A$ prvek $g(f(x)) \in C$.
-
+\textbf{Složené zobrazení} se značí $g \circ f$. Pokud máme zobrazení $f: A \rightarrow B$ a $g: B \rightarrow C$, pak složené zobrazení $g \circ f$ je zobrazení z množiny $A$ do množiny $C$, které přiřazuje každému prvku $x \in A$ prvek $g(f(x)) \in C$.\\
+\\
+Příklad: Nechť $f: \mathbb{N} \rightarrow \mathbb{N}$ je zobrazení definované jako $f(x) = 2x$ a $g: \mathbb{N} \rightarrow \mathbb{N}$ je zobrazení definované jako $g(y) = y + 3$. Zapište zobrazení $f$ a $g$ a poté složené zobrazení $g \circ f$. U obou zobrazení určete jen 5 prvních prvků
+\\
+\\
+Řešení: Prvních 5 prvků zobrazení $f$ je f = \{(1, 2), (2, 4), (3, 6), (4, 8)\} a první 4 prvků zobrazení $g$ je g = \{(1, 4), (2, 5), (3, 6), (4, 7)\}. Složené zobrazení $g \circ f$ je definováno jako $g(f(x)) = g(2x) = 2x + 3$. Prvních 5 prvků složeného zobrazení $g \circ f$ je \{(1, 5), (2, 7), (3, 9), (4, 11)\}.
+\\ složené zobrazení je také možné znázornit pomocí diagramu se šipkami.
 \[
-\begin{tikzcd}
-    A \arrow[r, "f"] \arrow[dr, "h"'] & B \arrow[d, "g"] \\
-      & C
+\begin{tikzcd}[row sep = tiny]
+    1 \arrow[rd] &  1  & 1\\
+    2 \arrow[ddr] &  2 \arrow[dddr] & 2\\
+    3 \arrow[dddr] &  3  & 3\\
+    4 \arrow[ddddr] &  4 \arrow[dddr] & 4\\
+                & 5 & 5 \\
+                & 6 \arrow[dddr] & 6 \\
+                & 7 & 7 \\
+                & 8 \arrow[dddr] & 8 \\
+                & & 9\\
+                & & 10\\
+                & & 11\\
 \end{tikzcd}
 \]
+Pomocí šipek prostě zapíši sloupce s čísly, první dva pospojuji tak, jak mi vycházejí z předpisu 1. zobrazení, nebo výčtu prvků a pak pospojuji jen ty prvky ke kterým vede šipka s dalším sloupcem podle předpisu nebo výčtu prvků druhého zobrazení.
+\newpage
+A poslední příklad na závěr: Graficky znázorněte kartézský součin $A \times B$ množin \\$A = <-3, 1>$ a $B = <-2, 3>$ v množině $\mathbb{R}$. 
+
+Řešení: 
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines = middle, % Nastaví osy tak, aby se křížily uprostřed (jako kříž)
+            xlabel = {$x$},      % Popisek osy x
+            ylabel = {$y$},      % Popisek osy y
+            xmin = -4, xmax = 2, % Rozsah osy x
+            ymin = -3, ymax = 4, % Rozsah osy y
+            xtick = {-4, -3, -2, -1, 0, 1, 2}, % Čísla, která se na ose x zobrazí
+            ytick = {-3, -2, -1, 0, 1, 2, 3, 4}, % Čísla, která se na ose y zobrazí
+            grid = both,         % Zapne pomocnou mřížku
+            grid style = {dashed, gray!30} % Mřížka bude čárkovaná a světle šedá
+        ]
+        
+        % Tady vykreslíme ten čtverec!
+        % 'fill=blue!20' znamená modrá barva s průhledností 20 %
+        % 'draw=blue' udělá tmavě modrý okraj
+        \filldraw[fill=blue, fill opacity=0.3,draw=blue, thick] (-3, -2) rectangle (1,3);
+        
+        \end{axis}
+    \end{tikzpicture}
+    \caption*{Znázornění kartézského součinu jako plochy}
+\end{figure}
 
 
 
