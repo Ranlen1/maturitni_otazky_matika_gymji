@@ -15,6 +15,8 @@
 \usepackage{graphicx}
 
 % matematicke package
+\usepackage{tikz-cd}
+\usetikzlibrary{babel}
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage{amsfonts}
@@ -33,11 +35,10 @@
 \begin{itemize}[itemsep = 2pt]
     \item \textbf{Množina} je soubor rozlišitelných prvků, která je jednoznačně určena svými prvky a nezáleží na pořadí prvků
     \item \textbf{Prvek množiny} značíme jako $x \in A$, což znamená, že prvek $x$ patří do množiny $A$. Pokud prvek nepatří do množiny, značíme to jako $x \notin A$.
-    \item \textbf{Velikost množiny} se značí jako $|A|$ a udává počet prvků v množině $A$.
+    \item \textbf{Mohutnost(velikost) množiny} se značí jako $|A|$ a udává počet prvků v množině $A$.
     \item \textbf{Prázdná množina} se značí jako $\emptyset$ a neobsahuje žádné prvky.
 
 \end{itemize}
-\
 \subsection*{Vztahy mezi množinami}
 \begin{itemize}[itemsep = 2pt]
     \item \textbf{Podmnožina} she značí jako $A \subseteq B$, pokud každý prvek z A patří zároveň do B. \textbf{Vlastní podmnožina} se značí A $\subset$ B, znamená to, že A je podmnožinou B, ale $A \neq B$, tedy v B je alespoň jeden prvek navíc. (přijde mi, že tohle kritérium Pazi úplně nenásleduje, ale nevim)
@@ -64,10 +65,19 @@ Počet prvků v kartézském součinu je roven součinu počtů prvků jednotliv
 
 Jeden z příkladů použití kartézského součinu je jeho využití pro definici kartézské roviny $\mathbb{R}^2 = \mathbb{R} \times \mathbb{R}$, kde $\mathbb{R}$ je množina reálných čísel. Každý bod v této rovině je reprezentován uspořádanou dvojicí $(x, y)$, kde $x$ a $y$ jsou reálná čísla.
 
-Příklad: Znázorněte kartézský součin množin $\mathbb{N} \times \mathbb{R}$, kde $\mathbb{N}$ je množina přirozených čísel. Tento kartézský součin by byl reprezentován jako nekonečně mnoho svislých čar na kartézské rovině, kde každá čára odpovídá jednomu přirozenému číslu. Na ose x by byly znázorněny přirozená čísla, zatímco na ose y by byly teálná čísla. 
+Příklad: Znázorněte kartézský součin množin $\mathbb{N} \times \mathbb{R}$, kde $\mathbb{N}$ je množina přirozených čísel. 
+
+Řešení: Tento kartézský součin by byl reprezentován jako nekonečně mnoho svislých čar na kartézské rovině, kde každá čára odpovídá jednomu přirozenému číslu. Na ose x by byly znázorněny přirozená čísla, zatímco na ose y by byly reálná čísla. 
+
+\begin{figure}[H]
+    \centering % Zarovná obrázek na střed
+    \includegraphics[width=0.5\textwidth]{pictures/Priklad1.png} % Nahraďte 'obrazek.png' názvem vašeho obrázku
+    \caption*{Graf znázorňující řešení výše ukázaného příkladu}
+    \label{fig:muj_obraze} % Slouží pro křížové odkazy v textu
+\end{figure}
 
 \subsection*{Relace}
-Relace R nad množinami A a B je libovolná podmnožina kartézského součinu $A \times B $.
+Relace R nad množinami A a B je libovolná podmnožina kartézského součinu $A \times B $. Relace může být i inverzní, značí se jako $R^{-1}$ a všechny dvojice jsou $(b, a)$.
 
 \subsubsection*{Vlastnosti relací}
 \begin{itemize}[itemsep = 2pt]
@@ -78,15 +88,32 @@ Relace R nad množinami A a B je libovolná podmnožina kartézského součinu $
 Například kartézská mocnina reálných čísel $\mathbb{R}^2$ je reflexivní, symetrická a tranzitivní relace. 
 \begin{itemize}[itemsep = 2pt]
     \item \textbf{Relace ekvivalence} je relace, která je reflexivní, symetrická a tranzitivní. Tato relace se objevuje například u rovnoběžnosti(když $a \parallel b$ a $b \parallel c$ pak $a \parallel c$) nebo u rovnosti (když $a = b$ a $b = c$ pak $a = c$).)
-    \item \textbf{Relace uspořádání} je relace, která je antisymetrická a tranzitivní. Objevuje se například u blah blah blah \dots
+    \item \textbf{Relace uspořádání} je relace, která je antisymetrická a tranzitivní. Objevuje se například u porovnávání čísel (když $a \leq b$ a $b \leq c$ pak $a \leq c$)
 \end{itemize}
 
+\subsection*{Zobrazení}
+Definice: Zobrazení $f$ z množiny $A$ do množiny $B$ je předpis, který každému prvku $x \in A$ přiřazuje nejvýše jeden prvek $y \in B$. Zobrazení je tudíž zprava jednoznačné. 
 
+Zobrazení se zapisuje následovně: $f: A \rightarrow B$ a říkáme, že $f$ zobrazuje množinu $A$ do množiny $B$. Prvek $y$ se nazývá obrazem prvku $x$ a značí se jako $f(x) = y$. Prvek $x$ se nazývá vzorem prvku $y$.
+\begin{itemize}[itemsep = 2pt]
+    \item \textbf{Obor hodnot} je množina všech obrazů pro které existuje vzor v možině  $A$, značí $H_f$. Pozor, není vždy totožný s množinou $B$.
+    \item \textbf{Definiční obor} je množina všechn vzorů, pro které existuje obraz v množině $B$, značí se $D_f$.
+\end{itemize}
+Existují různé typy zobrazení, které se liší podle toho jak jsou k sobě přiřazeny vzory a obrazy
+\begin{itemize}[itemsep = 2pt]
+    \item \textbf{Injekce} je zobrazení, které se také nazývá prosté zobrazení. Je charakteristické tím, že každé dva různé prvky z množiny $A$ jsou zobrazeny na různé prvky v množině $B$.
+    \item \textbf{Surjekce} je zobrazení, které se může nazývat zobrazení „na". Obor hodnot se je stejný jako množina $B$, tedy každý prvek z $B$ má alespoň jeden vzor v $A$.
+    \item \textbf{Bijekce} je zobrazení, které je vzájemně jednoznačné, tedy každému prvku z $A$ je přiřazen právě jeden prvek z $B$ a zároveň každý prvek z $B$ má právě jeden vzor v $A$. Toto zobrazení je zároveň injekcí i surjekcí a proto existuje jeho inverzí verze, která je zobrazením. Množina $A$ i $B$ musí mít stejnou mohutnost(počet prvků).
+\end{itemize}
 
+\textbf{Složené zobrazení} se značí $g \circ f$. Pokud máme zobrazení $f: A \rightarrow B$ a $g: B \rightarrow C$, pak složené zobrazení $g \circ f$ je zobrazení z množiny $A$ do množiny $C$, které přiřazuje každému prvku $x \in A$ prvek $g(f(x)) \in C$.
 
-
-
-
+\[
+\begin{tikzcd}
+    A \arrow[r, "f"] \arrow[dr, "h"'] & B \arrow[d, "g"] \\
+      & C
+\end{tikzcd}
+\]
 
 
 
