@@ -70,11 +70,34 @@ Příklad: Znázorněte kartézský součin množin $\mathbb{N} \times \mathbb{R
 Řešení: Tento kartézský součin by byl reprezentován jako nekonečně mnoho svislých čar na kartézské rovině, kde každá čára odpovídá jednomu přirozenému číslu. Na ose x by byly znázorněny přirozená čísla, zatímco na ose y by byly reálná čísla. 
 
 \begin{figure}[H]
-    \centering % Zarovná obrázek na střed
-    \includegraphics[width=0.5\textwidth]{pictures/Priklad1.png} % Nahraďte 'obrazek.png' názvem vašeho obrázku
-    \caption*{Graf znázorňující řešení výše ukázaného příkladu}
-    \label{fig:muj_obraze} % Slouží pro křížové odkazy v textu
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            axis lines = middle,
+            xlabel = {$x$}, 
+            ylabel = {$y$},
+            xmin = -1, xmax = 7, % Osa x končí kousek za 6, aby bylo místo na tečky
+            ymin = -3, ymax = 3,   % Rozsah osy y
+            xtick = {1, 2, 3, 4, 5, 6}, % Vykreslíme čísla na ose x
+            ytick = {-2, -1, 1, 2},     % Vykreslíme čísla na ose y
+            grid = none % Zde mřížku vypneme, aby nerušila samotné řešení
+        ]
+        
+        % Vykreslení svislých čar pomocí cyklu
+        % \i postupně nabývá hodnot 1, 2, 3, 4, 5, 6
+        \pgfplotsinvokeforeach{1,2,3,4,5,6}{
+            \draw[blue, thick] (#1, -3) -- (#1, 3);
+        }
+        
+        % Přidání tří teček, které naznačují, že množina N pokračuje do nekonečna
+        \node[right] at (6.3, -0.5) {\dots};
+        \node [below left] at (0,0) {$0$};
+        
+        \end{axis}
+    \end{tikzpicture}
+    \caption*{Graf znázorňující řešení: Kartézský součin $\mathbb{N} \times \mathbb{R}$}
 \end{figure}
+
 
 \subsection*{Relace}
 Relace R nad množinami A a B je libovolná podmnožina kartézského součinu $A \times B $. Relace může být i inverzní, značí se jako $R^{-1}$ a všechny dvojice jsou $(b, a)$.
@@ -171,7 +194,7 @@ A poslední příklad na závěr: Graficky znázorněte kartézský součin $A \
         % 'fill=blue!20' znamená modrá barva s průhledností 20 %
         % 'draw=blue' udělá tmavě modrý okraj
         \filldraw[fill=blue, fill opacity=0.3,draw=blue, thick] (-3, -2) rectangle (1,3);
-        
+        \node [below left] at (0,0) {$0$};
         \end{axis}
     \end{tikzpicture}
     \caption*{Znázornění kartézského součinu jako plochy}
